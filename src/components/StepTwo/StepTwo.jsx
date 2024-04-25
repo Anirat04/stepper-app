@@ -9,7 +9,7 @@ const StepTwo = () => {
             </div>
             <div className="w-full pb-[44px] bg-white rounded-t-[30px]">
                 <div className="text-center pt-[30px] px-5">
-                    <h1 className="font-bold text-[22px] mb-4">Schedule appoinments with expert doctors</h1>
+                    <h1 className="font-bold text-[22px] mb-4 text-black">Schedule appoinments with expert doctors</h1>
                     <div className="">
                         <p className="text-gray-400 text-[14px]">Find experienced specialist doctors<br /> with expert ratings and reviews <br /> and book your appoinments assale-free</p>
                     </div>
@@ -23,7 +23,7 @@ const StepTwo = () => {
                 </div>
                 <div className="px-5">
                     <Link to='/step3'>
-                        <button className="btn btn-primary bg-[#7563f7] border-none w-full">Next</button>
+                        <button className="btn btn-primary bg-[#7563f7] border-none w-full text-white">Next</button>
                     </Link>
                 </div>
             </div>
