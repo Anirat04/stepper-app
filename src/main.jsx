@@ -9,6 +9,7 @@ import {
 import StepOne from './components/StepOne/StepOne.jsx';
 import StepTwo from './components/StepTwo/StepTwo.jsx';
 import StepThree from './components/StepThree/StepThree.jsx';
+import Login from './components/Login/Login.jsx';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/step3",
         element: <StepThree></StepThree>
+      },
+      {
+        path: "/login",
+        element: <Login></Login>
       },
     ]
   },
