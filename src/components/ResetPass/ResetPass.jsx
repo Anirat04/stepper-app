@@ -4,13 +4,24 @@ import { CiLock } from "react-icons/ci";
 import { PiEyeLight } from 'react-icons/pi';
 import { PiEyeSlashThin } from "react-icons/pi";
 import newPassImage from '../../assets/images/NewPass-Image.png'
+import congoImage from '../../assets/images/CongoModal-Image.png'
+import { Link, useNavigate } from 'react-router-dom';
 
+
+const Modal = () => {
+    return (
+        <div><h1>Hello worldsssss!!!!!!!</h1></div>
+    )
+}
 
 const ResetPass = () => {
     const [openEye, setOpenEye] = useState(false)
     const [openEyeConfirm, setOpenEyeConfirm] = useState(false)
     const [hasTextNewPass, setHasTextNewPass] = useState(false);
     const [hasTextConfirmPass, setHasTextConfirmPass] = useState(false);
+    // Modal useStates
+    const [showModal, setShowModal] = useState(false)
+    const navigate = useNavigate()
 
 
     const handleNewPassOnChange = (event) => {
@@ -107,8 +118,40 @@ const ResetPass = () => {
                                 className='w-full h-full'
                                 type="submit"
                                 value={'Continue'}
+                                onClick={() => setShowModal(true)}
                             />
                         </button>
+                        {showModal &&
+                            <div className='h-full w-full absolute top-0 left-0'>
+                                <div className='h-full w-full relative'>
+                                    <div className='h-[410px] w-[330px] rounded-2xl bg-white absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 flex flex-col px-4 justify-center shadow-lg z-10'>
+                                        <div className='flex justify-center'>
+                                            <img src={congoImage} alt="" />
+                                        </div>
+                                        <div className='mt-5'>
+                                            <Link to={'/'}>
+                                                <button
+                                                    className="btn btn-primary bg-[#7563f7] border-none w-full text-white font-normal rounded-xl"                                            >
+                                                    Back to home
+                                                </button>
+                                            </Link>
+                                        </div>
+                                    </div>
+                                    <div
+                                        className=' h-full'
+                                        style={{
+                                            // background: 'rgba(255, 255, 255, 0)',
+                                            borderRadius: '16px',
+                                            boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+                                            WebkitBackdropFilter: 'blur(12.7px)',
+                                            backdropFilter: 'blur(12.7px)',
+                                            border: '1px solid rgba(255, 255, 255, 0.3)',
+                                        }}
+                                    >
+                                    </div>
+                                </div>
+                            </div>
+                        }
                     </form>
                 </div>
             </div>

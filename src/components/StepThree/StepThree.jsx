@@ -22,7 +22,7 @@ const StepThree = () => {
                     </div>
                 </div>
                 <div className="">
-                    <Link to='/step3'>
+                    <Link to='/login'>
                         <button className="btn btn-primary bg-[#7563f7] border-none w-full text-white">Get Started</button>
                     </Link>
                 </div>
