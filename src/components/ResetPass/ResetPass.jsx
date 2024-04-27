@@ -6,6 +6,7 @@ import { PiEyeSlashThin } from "react-icons/pi";
 import newPassImage from '../../assets/images/NewPass-Image.png'
 import congoImage from '../../assets/images/CongoModal-Image.png'
 import { Link, useNavigate } from 'react-router-dom';
+import { IoIosArrowBack } from 'react-icons/io';
 
 
 const Modal = () => {
@@ -47,10 +48,16 @@ const ResetPass = () => {
 
     return (
         <div className='bg-white h-full'>
-            <div className='px-5 pt-[40px]'>
+            <div className='px-5 pt-[80px]'>
+                <div>
+                    <Link to={"/login/forgot-pass/verificationCode"}>
+                        <IoIosArrowBack className='text-black text-[24px] absolute top-[40px]' />
+                    </Link>
+                </div>
+
                 <div className='text-center'>
-                    <h2 className='text-black text-[26px] font-bold mb-2' >Welcome Back!</h2>
-                    <p className='text-[14px]'>Use Credentials to access your account</p>
+                    <h2 className='text-black text-[26px] font-bold mb-2' >Enter New Password</h2>
+                    <p className='text-[14px]'>Please enter your new password</p>
                 </div>
 
                 {/* Login Form */}
@@ -109,7 +116,7 @@ const ResetPass = () => {
                             </div>
                         </div>
 
-                        <div className="my-[75px]">
+                        <div className="my-[57px]">
                             <img src={newPassImage} alt="" />
                         </div>
 

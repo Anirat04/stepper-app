@@ -6,6 +6,7 @@ import { PiEyeLight, PiEyeSlashThin } from 'react-icons/pi';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/images/weCare-logo.png'
 import GoogleLogo from '../../assets/images/Google-logo.png'
+import { IoIosArrowBack } from "react-icons/io";
 
 const SignUp = () => {
     const [openEye, setOpenEye] = useState(false)
@@ -38,6 +39,11 @@ const SignUp = () => {
     return (
         <div className='bg-white h-full'>
             <div className='px-5 pt-[40px]'>
+                <div>
+                    <Link to={"/login"}>
+                        <IoIosArrowBack className='text-black text-[24px] absolute' />
+                    </Link>
+                </div>
                 {/* Logo and header text */}
                 <div className='flex justify-center'>
                     <img src={logo} alt="" />

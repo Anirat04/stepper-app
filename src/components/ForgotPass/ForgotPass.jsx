@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { IoMailOutline } from "react-icons/io5";
 import forgotPassImg from "../../assets/images/Forgot-Pass-image.png"
 import { Link } from "react-router-dom";
+import { IoIosArrowBack } from "react-icons/io";
 
 const ForgotPass = () => {
     const [hasTextEmail, setHasTextEmail] = useState(false);
@@ -19,6 +20,11 @@ const ForgotPass = () => {
 
     return (
         <div className="px-5 bg-white h-full pt-[80px]">
+            <div>
+                <Link to={"/login"}>
+                    <IoIosArrowBack className='text-black text-[24px] absolute top-[40px]' />
+                </Link>
+            </div>
             <div>
                 <div className='text-center'>
                     <h2 className='text-black text-[26px] font-bold mb-2' >Forgot Password</h2>

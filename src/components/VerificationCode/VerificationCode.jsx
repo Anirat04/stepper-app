@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import VerificationImage from "../../assets/images/CodeVerification-Image.png"
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { IoIosArrowBack } from "react-icons/io";
 
 const VerificationCode = () => {
     // Input values getting from codes state
@@ -49,6 +50,11 @@ const VerificationCode = () => {
 
     return (
         <div className="px-5 bg-white h-full pt-[80px]">
+            <div>
+                <Link to={"/login/forgot-pass"}>
+                    <IoIosArrowBack className='text-black text-[24px] absolute top-[40px]' />
+                </Link>
+            </div>
             <div>
                 <div className='text-center'>
                     <h2 className='text-black text-[26px] font-bold mb-2' >Enter Verification Code</h2>
