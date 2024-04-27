@@ -1,27 +1,27 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { CiUser } from "react-icons/ci";
-import { CiLock } from "react-icons/ci";
-import { PiEyeLight } from 'react-icons/pi';
-import { PiEyeSlashThin } from "react-icons/pi";
+import { CiLock, CiUser } from 'react-icons/ci';
+import { IoLogoApple, IoMailOutline } from 'react-icons/io5';
+import { PiEyeLight, PiEyeSlashThin } from 'react-icons/pi';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/images/weCare-logo.png'
 import GoogleLogo from '../../assets/images/Google-logo.png'
-import { IoLogoApple } from "react-icons/io5";
 
-
-const Login = () => {
+const SignUp = () => {
     const [openEye, setOpenEye] = useState(false)
     const [hasTextUser, setHasTextUser] = useState(false);
+    const [hasTextEmail, setHasTextEmail] = useState(false);
     const [hasTextPass, setHasTextPass] = useState(false);
 
     const handleUserOnchange = (event) => {
         setHasTextUser(event.target.value !== '');
     };
+    const hnadleEmailOnChange = (event) => {
+        setHasTextEmail(event.target.value !== '');
+    };
     const handlePassOnChange = (event) => {
         setHasTextPass(event.target.value !== '');
     };
-
 
     // Form operations
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -33,6 +33,8 @@ const Login = () => {
         setOpenEye(!openEye)
     }
 
+
+
     return (
         <div className='bg-white h-full'>
             <div className='px-5 pt-[40px]'>
@@ -41,11 +43,11 @@ const Login = () => {
                     <img src={logo} alt="" />
                 </div>
                 <div className='text-center'>
-                    <h2 className='text-black text-[26px] font-bold mb-2' >Welcome Back!</h2>
-                    <p className='text-[14px]'>Use Credentials to access your account</p>
+                    <h2 className='text-black text-[26px] font-bold mb-2' >Create an Account</h2>
+                    <p className='text-[14px]'>Please fill this details to create an account</p>
                 </div>
 
-                {/* Login Form */}
+                {/* Sign Up Form */}
                 <div>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className='my-8'>
@@ -64,6 +66,20 @@ const Login = () => {
                                     />
                                 </span>
                             </div>
+                            {/* Email */}
+                            <div className='relative mb-5 group'>
+                                <input
+                                    type="email"
+                                    placeholder="Enter your email"
+                                    {...register("email")}
+                                    onChange={hnadleEmailOnChange}
+                                    className={`bg-white border w-full py-3 rounded-lg pl-12 outline-0 focus:border-[#7563f7] ${hasTextEmail ? 'border-[#7563f7]' : ''} text-black`}
+                                />
+                                <span className='absolute left-4 top-1/2 -translate-y-1/2'>
+                                    <IoMailOutline className={`text-[22px] group-focus-within:text-[#7563f7] ${hasTextEmail ? 'text-[#7563f7]' : ''}`} />
+                                </span>
+                            </div>
+
                             {/* Password */}
                             <div className="relative group">
                                 <input
@@ -89,12 +105,9 @@ const Login = () => {
                                     }
                                 </span>
                             </div>
-                            <div className='text-right  mt-2'>
-                                <Link to={'forgot-pass'} className='text-[#7563f7]'>Forgot Password?</Link>
-                            </div>
                         </div>
                         <button className="btn btn-primary bg-[#7563f7] border-none w-full text-white font-normal">
-                            <input className='w-full h-full' type="submit" value={'Log In'} />
+                            <input className='w-full h-full' type="submit" value={'Sign Up'} />
                         </button>
                     </form>
                 </div>
@@ -118,8 +131,8 @@ const Login = () => {
                     </div>
                 </div>
                 <div className='text-center'>
-                    <div className='mt-[80px]'>
-                        <p className='text-black text-[14px] font-medium'>Don&apos;t have an account? <Link to={'/signUp'} className='text-[#7563f7]'>Sign up</Link></p>
+                    <div className='mt-[42px]'>
+                        <p className='text-black text-[14px] font-medium'>Already have an account? <Link to={'/login'} className='text-[#7563f7]'>Log in</Link></p>
                     </div>
                 </div>
             </div>
@@ -127,4 +140,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default SignUp;

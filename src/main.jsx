@@ -10,6 +10,10 @@ import StepOne from './components/StepOne/StepOne.jsx';
 import StepTwo from './components/StepTwo/StepTwo.jsx';
 import StepThree from './components/StepThree/StepThree.jsx';
 import Login from './components/Login/Login.jsx';
+import SignUp from './components/SignUp/SignUp.jsx';
+import ForgotPass from './components/ForgotPass/ForgotPass.jsx';
+import VerificationCode from './components/VerificationCode/VerificationCode.jsx';
+import ResetPass from './components/ResetPass/ResetPass.jsx';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +35,22 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>
+      },
+      {
+        path: "/signUp",
+        element: <SignUp></SignUp>
+      },
+      {
+        path: "login/forgot-pass",
+        element: <ForgotPass></ForgotPass>
+      },
+      {
+        path: "login/forgot-pass/verificationCode",
+        element: <VerificationCode></VerificationCode>
+      },
+      {
+        path: "login/forgot-pass/verificationCode/resetPass",
+        element: <ResetPass></ResetPass>
       },
     ]
   },
