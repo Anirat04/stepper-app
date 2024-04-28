@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form"
 import RandomGirlImage from "../../../assets/images/RandomGirl-image.png"
+import LiveSlider from "../../../components/HomeComponents/LiveSlider/LiveSlider";
 
 const Home = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm()
@@ -39,6 +40,9 @@ const Home = () => {
                         </form>
                     </div>
                 </div>
+            </div>
+            <div className="mt-[54px] pl-5">
+                <LiveSlider></LiveSlider>
             </div>
         </div>
     );
