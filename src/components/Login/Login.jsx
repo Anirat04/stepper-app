@@ -93,9 +93,11 @@ const Login = () => {
                                 <Link to={'forgot-pass'} className='text-[#7563f7]'>Forgot Password?</Link>
                             </div>
                         </div>
-                        <button className="btn btn-primary bg-[#7563f7] border-none w-full text-white font-normal">
-                            <input className='w-full h-full' type="submit" value={'Log In'} />
-                        </button>
+                        <Link to={"/"}>
+                            <button className="btn btn-primary bg-[#7563f7] border-none w-full text-white font-normal">
+                                <input className='w-full h-full' type="submit" value={'Log In'} />
+                            </button>
+                        </Link>
                     </form>
                 </div>
                 {/* Divider */}
