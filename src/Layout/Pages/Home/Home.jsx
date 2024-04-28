@@ -3,6 +3,7 @@ import RandomGirlImage from "../../../assets/images/RandomGirl-image.png"
 import LiveSlider from "../../../components/HomeComponents/LiveSlider/LiveSlider";
 import IconsSlider from "../../../components/HomeComponents/IconsSlider/IconsSlider";
 import PopularDoctors from "../../../components/HomeComponents/PopularDoctors/PopularDoctors";
+import FeatureDoctor from "../../../components/HomeComponents/FeatureDoctor/FeatureDoctor";
 
 const Home = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm()
@@ -51,6 +52,9 @@ const Home = () => {
             </div>
             <div className="pb-6">
                 <PopularDoctors></PopularDoctors>
+            </div>
+            <div>
+                <FeatureDoctor></FeatureDoctor>
             </div>
         </div>
     );
