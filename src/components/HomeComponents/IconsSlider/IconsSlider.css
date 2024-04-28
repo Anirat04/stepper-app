@@ -1,0 +1,84 @@
+/* Group 672 */
+.group-1 {
+    position: absolute;
+    /* width: 113px;
+    height: 119px; */
+    left: 20px;
+    top: 449px;
+}
+
+/* Rectangle 530 */
+.rectangle-g1 {
+    position: absolute;
+    width: 80px;
+    height: 90px;
+    left: 20px;
+    top: 449px;
+    background: linear-gradient(143.86deg, #2753F3 6.49%, #765AFC 96.83%);
+    border-radius: 8px;
+}
+
+/* Ellipse 148 */
+.ellipse1-g1 {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: 20px;
+    top: 488px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 50%;
+}
+
+/* Ellipse 149 */
+.ellipse2-g1 {
+    position: absolute;
+    width: 67px;
+    height: 67px;
+    left: 66px;
+    top: 449px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 50%;
+}
+
+
+/* ////////////////////////////// */
+.group-2,
+.rectangle-g2,
+.ellipse1-g2,
+.ellipse2-g2 {
+    position: absolute;
+}
+
+.group-2 {
+    width: 113px;
+    height: 119px;
+    left: 112px;
+    top: 449px;
+}
+
+.rectangle-g2 {
+    width: 80px;
+    height: 90px;
+    left: 112px;
+    top: 449px;
+    background: linear-gradient(101.01deg, #0EBE7E 0.84%, #07D9AD 95.65%);
+    border-radius: 8px;
+}
+
+.ellipse1-g2 {
+    width: 80px;
+    height: 80px;
+    left: 112px;
+    top: 488px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+}
+
+.ellipse2-g2 {
+    width: 67px;
+    height: 67px;
+    left: 158px;
+    top: 449px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}

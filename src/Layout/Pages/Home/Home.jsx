@@ -1,6 +1,8 @@
 import { useForm } from "react-hook-form"
 import RandomGirlImage from "../../../assets/images/RandomGirl-image.png"
 import LiveSlider from "../../../components/HomeComponents/LiveSlider/LiveSlider";
+import IconsSlider from "../../../components/HomeComponents/IconsSlider/IconsSlider";
+import PopularDoctors from "../../../components/HomeComponents/PopularDoctors/PopularDoctors";
 
 const Home = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm()
@@ -10,7 +12,7 @@ const Home = () => {
     // const getSearchText = watch('SearchText')
 
     return (
-        <div className="bg-white h-full">
+        <div className="bg-[#fafafa] min-h-full">
             {/* Heading div */}
             <div
                 className="bg-gradient-to-br from-[#0EBE7E] to-[#07D9AD] pt-9 px-5 rounded-b-[20px] pb-[48px] relative"
@@ -43,6 +45,12 @@ const Home = () => {
             </div>
             <div className="mt-[54px] pl-5">
                 <LiveSlider></LiveSlider>
+            </div>
+            <div className="h-[150px]">
+                <IconsSlider></IconsSlider>
+            </div>
+            <div className="pb-6">
+                <PopularDoctors></PopularDoctors>
             </div>
         </div>
     );

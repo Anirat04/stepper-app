@@ -17,7 +17,7 @@ import liveImage3 from "../../../assets/images/Live-doctor-image-3.jpeg"
 const LiveSlider = () => {
     return (
         <div className='font-rubik'>
-            <div>
+            <div className='mb-3'>
                 <h3 className='text-[18px] font-medium'>Live Doctors</h3>
             </div>
             {/* Slider container */}
