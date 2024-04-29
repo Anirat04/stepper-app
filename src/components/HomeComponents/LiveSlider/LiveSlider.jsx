@@ -25,7 +25,7 @@ const LiveSlider = () => {
                 <div>
                     <Swiper
                         slidesPerView={3}
-                        spaceBetween={40}
+                        spaceBetween={60}
                         // pagination={{
                         //     clickable: true,
                         // }}

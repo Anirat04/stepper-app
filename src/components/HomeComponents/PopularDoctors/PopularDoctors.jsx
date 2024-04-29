@@ -11,8 +11,9 @@ import { FreeMode } from 'swiper/modules';
 const PopularDoctors = () => {
     return (
         <div className='font-rubik pl-5'>
-            <div className="mb-3">
+            <div className="mb-3 flex items-center justify-between pr-4">
                 <h3 className='text-[18px] font-medium'>Popular Doctors</h3>
+                <span className='text-[#677294] text-[12px]'>See all &gt;</span>
             </div>
 
             <div>

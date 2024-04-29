@@ -50,10 +50,10 @@ const Home = () => {
             <div className="h-[150px]">
                 <IconsSlider></IconsSlider>
             </div>
-            <div className="pb-6">
+            <div>
                 <PopularDoctors></PopularDoctors>
             </div>
-            <div>
+            <div className="py-[30px]">
                 <FeatureDoctor></FeatureDoctor>
             </div>
         </div>

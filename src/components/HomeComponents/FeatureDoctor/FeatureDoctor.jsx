@@ -13,15 +13,16 @@ import docImage3 from '../../../assets/images/featureDoc-3.png'
 const FeatureDoctor = () => {
     return (
         <div className='font-rubik pl-5'>
-            <div className="mb-3">
+            <div className="mb-3 flex items-center justify-between pr-4">
                 <h3 className='text-[18px] font-medium'>Feature Doctor</h3>
+                <span className='text-[#677294] text-[12px]'>See all &gt;</span>
             </div>
 
             <div>
                 <div>
                     <Swiper
-                        slidesPerView={3}
-                        spaceBetween={3}
+                        slidesPerView={4}
+                        spaceBetween={90}
                         // pagination={{
                         //     clickable: true,
                         // }}
