@@ -7,16 +7,16 @@ import { PiEyeSlashThin } from "react-icons/pi";
 import { Link } from 'react-router-dom';
 import logo from '../../assets/images/weCare-logo.png'
 import GoogleLogo from '../../assets/images/Google-logo.png'
-import { IoLogoApple } from "react-icons/io5";
+import { IoLogoApple, IoMailOutline } from "react-icons/io5";
 
 
 const Login = () => {
     const [openEye, setOpenEye] = useState(false)
-    const [hasTextUser, setHasTextUser] = useState(false);
+    const [hasTextEmail, setHasTextEmail] = useState(false);
     const [hasTextPass, setHasTextPass] = useState(false);
 
-    const handleUserOnchange = (event) => {
-        setHasTextUser(event.target.value !== '');
+    const hnadleEmailOnChange = (event) => {
+        setHasTextEmail(event.target.value !== '');
     };
     const handlePassOnChange = (event) => {
         setHasTextPass(event.target.value !== '');
@@ -25,8 +25,26 @@ const Login = () => {
 
     // Form operations
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
-    console.log(errors);
+    const onSubmit = async (data) => {
+        try {
+            const response = await fetch('https://api-doctors24.duckdns.org/sign-in', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+            if (!response.ok) {
+                throw new Error('Failed to log in')
+            }
+
+            const responseData = await response.json()
+            console.log(responseData);
+
+        } catch (error) {
+            console.log('Error:', error);
+        }
+    }
 
     // Handle the form password hide/show events
     const handleOpenEye = () => {
@@ -49,19 +67,17 @@ const Login = () => {
                 <div>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className='my-8'>
-                            {/* Username */}
+                            {/* Email */}
                             <div className='relative mb-5 group'>
                                 <input
-                                    type="text"
-                                    placeholder="Enter Username"
-                                    {...register("username")}
-                                    onChange={handleUserOnchange}
-                                    className={`bg-white border w-full py-3 rounded-lg pl-12 outline-0 focus:border-[#7563f7] ${hasTextUser ? 'border-[#7563f7]' : ''} text-black`}
+                                    type="email"
+                                    placeholder="Enter your email"
+                                    {...register("email")}
+                                    onChange={hnadleEmailOnChange}
+                                    className={`bg-white border w-full py-3 rounded-lg pl-12 outline-0 focus:border-[#7563f7] ${hasTextEmail ? 'border-[#7563f7]' : ''} text-black`}
                                 />
                                 <span className='absolute left-4 top-1/2 -translate-y-1/2'>
-                                    <CiUser
-                                        className={`text-[22px] group-focus-within:text-[#7563f7] ${hasTextUser ? 'text-[#7563f7]' : ''}`}
-                                    />
+                                    <IoMailOutline className={`text-[22px] group-focus-within:text-[#7563f7] ${hasTextEmail ? 'text-[#7563f7]' : ''}`} />
                                 </span>
                             </div>
                             {/* Password */}
@@ -69,7 +85,7 @@ const Login = () => {
                                 <input
                                     type={`${openEye === false ? 'password' : 'text'}`}
                                     placeholder="Enter Password"
-                                    {...register("Password")}
+                                    {...register("password")}
                                     onChange={handlePassOnChange}
                                     className={`bg-white border w-full py-3 rounded-lg pl-12 outline-0 focus:border-[#7563f7] ${hasTextPass ? ' border-[#7563f7]' : ''} text-black`}
                                 />
@@ -93,11 +109,9 @@ const Login = () => {
                                 <Link to={'forgot-pass'} className='text-[#7563f7]'>Forgot Password?</Link>
                             </div>
                         </div>
-                        <Link to={"/"}>
-                            <button className="btn btn-primary bg-[#7563f7] border-none w-full text-white font-normal">
-                                <input className='w-full h-full' type="submit" value={'Log In'} />
-                            </button>
-                        </Link>
+                        <button className="btn btn-primary bg-[#7563f7] border-none w-full text-white font-normal">
+                            <input className='w-full h-full' type="submit" value={'Log In'} />
+                        </button>
                     </form>
                 </div>
                 {/* Divider */}

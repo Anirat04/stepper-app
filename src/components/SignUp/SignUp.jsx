@@ -26,8 +26,27 @@ const SignUp = () => {
 
     // Form operations
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
-    console.log(errors);
+    const onSubmit = async (data) => {
+        try {
+            const response = await fetch('https://api-doctors24.duckdns.org/create-account', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to create account');
+            }
+
+            const responseData = await response.json();
+            console.log(responseData);
+
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
 
     // Handle the form password hide/show events
     const handleOpenEye = () => {
@@ -57,12 +76,12 @@ const SignUp = () => {
                 <div>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className='my-8'>
-                            {/* Username */}
+                            {/* Name */}
                             <div className='relative mb-5 group'>
                                 <input
                                     type="text"
-                                    placeholder="Enter Username"
-                                    {...register("username")}
+                                    placeholder="Enter your name"
+                                    {...register("name")}
                                     onChange={handleUserOnchange}
                                     className={`bg-white border w-full py-3 rounded-lg pl-12 outline-0 focus:border-[#7563f7] ${hasTextUser ? 'border-[#7563f7]' : ''} text-black`}
                                 />
@@ -91,7 +110,7 @@ const SignUp = () => {
                                 <input
                                     type={`${openEye === false ? 'password' : 'text'}`}
                                     placeholder="Enter Password"
-                                    {...register("Password")}
+                                    {...register("password")}
                                     onChange={handlePassOnChange}
                                     className={`bg-white border w-full py-3 rounded-lg pl-12 outline-0 focus:border-[#7563f7] ${hasTextPass ? ' border-[#7563f7]' : ''} text-black`}
                                 />

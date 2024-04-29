@@ -1,4 +1,4 @@
-
+// TODO: Fix the emoji section
 import { Link } from 'react-router-dom';
 import avatar from '../../../assets/images/live-avatar.png'
 import { useForm } from 'react-hook-form';
