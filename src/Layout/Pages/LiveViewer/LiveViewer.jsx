@@ -4,6 +4,10 @@ import avatar from '../../../assets/images/live-avatar.png'
 import { useForm } from 'react-hook-form';
 import EmojiPicker from 'emoji-picker-react';
 import { useState } from 'react';
+import commentAvatar1 from '../../../assets/images/LiveViewer/CommentAvatar1.png'
+import commentAvatar2 from '../../../assets/images/LiveViewer/CommentAvatar2.png'
+import commentAvatar3 from '../../../assets/images/LiveViewer/CommentAvatar3.png'
+import liveDoctorImage from '../../../assets/images/LiveViewer/DoctorInlive1.png'
 
 const LiveViewer = () => {
 
@@ -20,10 +24,18 @@ const LiveViewer = () => {
 
     return (
         <>
-            <div className='h-full relative'>
+            <div className='font-rubik h-full relative'>
                 {/* Div for video stream content */}
-                <div className='h-full bg-gray-300'>
-
+                <div className='h-full bg-gray-300 relative'>
+                    <div>
+                        <img className='w-full h-full' src={liveDoctorImage} alt="" />
+                    </div>
+                    <div
+                        className='absolute h-[498px] w-full bottom-0 left-0'
+                        style={{
+                            background: 'linear-gradient(178.05deg, rgba(0, 0, 0, 0) 2.42%, #000000 98.35%)'
+                        }}
+                    ></div>
                 </div>
                 <div className='absolute top-0 left-0 h-full w-full pt-9 px-5 flex flex-col justify-between'>
                     <div className='flex justify-between'>
@@ -41,8 +53,90 @@ const LiveViewer = () => {
                         </div>
                     </div>
                     {/* Comment Section */}
-                    <div className='h-[385px] max-h-[385px] bg-green-200'>
-                        <div></div>
+                    <div className='h-[385px] max-h-[385px] flex flex-col justify-end pb-3'>
+                        <div className='mb-6 flex flex-col gap-4 overflow-y-auto textareaScroll   '>
+                            <div className='flex items-center gap-[6px]'>
+                                <div className='min-w-11 h-full flex items-start justify-start'>
+                                    <img className='w-11 h-11 rounded-full' src={commentAvatar1} alt="" />
+                                </div>
+                                <div>
+                                    <h3 className='text-white text-[18px]'>Everhart Tween</h3>
+                                    <p className='text-white font-light text-[15px]'>Thanks for shareing doctor</p>
+                                </div>
+                            </div>
+                            <div className='flex items-center gap-[6px]'>
+                                <div className='min-w-11 h-full flex items-start justify-start'>
+                                    <img className='w-11 h-11 rounded-full' src={commentAvatar2} alt="" />
+                                </div>
+                                <div>
+                                    <h3 className='text-white text-[18px]'>Bonebrake Mash</h3>
+                                    <p className='text-white font-light text-[15px]'>Thanks for shareing doctor</p>
+                                </div>
+                            </div>
+                            <div className='flex items-center gap-[6px]'>
+                                <div className='min-w-11 h-full flex items-start justify-start'>
+                                    <img className='w-11 h-11 rounded-full' src={commentAvatar3} alt="" />
+                                </div>
+                                <div>
+                                    <h3 className='text-white text-[18px]'>Handler Wack</h3>
+                                    <p className='text-white font-light text-[15px]'>Thanks for shareing doctor</p>
+                                </div>
+                            </div>
+                            <div className='flex items-center gap-[6px]'>
+                                <div className='min-w-11 h-full flex items-start justify-start'>
+                                    <img className='w-11 h-11 rounded-full' src={commentAvatar1} alt="" />
+                                </div>
+                                <div>
+                                    <h3 className='text-white text-[18px]'>Everhart Tween</h3>
+                                    <p className='text-white font-light text-[15px]'>Thanks for shareing doctor</p>
+                                </div>
+                            </div>
+                            <div className='flex items-center gap-[6px]'>
+                                <div className='min-w-11 h-full flex items-start justify-start'>
+                                    <img className='w-11 h-11 rounded-full' src={commentAvatar2} alt="" />
+                                </div>
+                                <div>
+                                    <h3 className='text-white text-[18px]'>Bonebrake Mash</h3>
+                                    <p className='text-white font-light text-[15px]'>Thanks for shareing doctor</p>
+                                </div>
+                            </div>
+                            <div className='flex items-center gap-[6px]'>
+                                <div className='min-w-11 h-full flex items-start justify-start'>
+                                    <img className='w-11 h-11 rounded-full' src={commentAvatar3} alt="" />
+                                </div>
+                                <div>
+                                    <h3 className='text-white text-[18px]'>Handler Wack</h3>
+                                    <p className='text-white font-light text-[15px]'>Thanks for shareing doctor</p>
+                                </div>
+                            </div>
+                            <div className='flex items-center gap-[6px]'>
+                                <div className='min-w-11 h-full flex items-start justify-start'>
+                                    <img className='w-11 h-11 rounded-full' src={commentAvatar1} alt="" />
+                                </div>
+                                <div>
+                                    <h3 className='text-white text-[18px]'>Everhart Tween</h3>
+                                    <p className='text-white font-light text-[15px]'>Thanks for shareing doctor</p>
+                                </div>
+                            </div>
+                            <div className='flex items-center gap-[6px]'>
+                                <div className='min-w-11 h-full flex items-start justify-start'>
+                                    <img className='w-11 h-11 rounded-full' src={commentAvatar2} alt="" />
+                                </div>
+                                <div>
+                                    <h3 className='text-white text-[18px]'>Bonebrake Mash</h3>
+                                    <p className='text-white font-light text-[15px]'>Thanks for shareing doctor</p>
+                                </div>
+                            </div>
+                            <div className='flex items-center gap-[6px]'>
+                                <div className='min-w-11 h-full flex items-start justify-start'>
+                                    <img className='w-11 h-11 rounded-full' src={commentAvatar3} alt="" />
+                                </div>
+                                <div>
+                                    <h3 className='text-white text-[18px]'>Handler Wack</h3>
+                                    <p className='text-white font-light text-[15px]'>Thanks for shareing doctor</p>
+                                </div>
+                            </div>
+                        </div>
                         <div>
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <div className='relative'>
@@ -68,7 +162,7 @@ const LiveViewer = () => {
                                         <EmojiPicker open={openEmoji} width={335} height={320} className='' />
                                     </div>
                                 </div>
-                                <input type="submit" />
+                                {/* <input type="submit" /> */}
                             </form>
                         </div>
                     </div>
