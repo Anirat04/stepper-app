@@ -4,8 +4,10 @@ import LiveSlider from "../../../components/HomeComponents/LiveSlider/LiveSlider
 import IconsSlider from "../../../components/HomeComponents/IconsSlider/IconsSlider";
 import PopularDoctors from "../../../components/HomeComponents/PopularDoctors/PopularDoctors";
 import FeatureDoctor from "../../../components/HomeComponents/FeatureDoctor/FeatureDoctor";
+import HomeBG1 from "../../../assets/images/Home-bg/Ellipse 142.png"
+import HomeBG2 from "../../../assets/images/Home-bg/Ellipse 143.png"
 
-//  TODO: Homepage Background color effect should be applied
+//  TODO: Homepage Background color effect should be applied **Properly**
 const Home = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm()
     const onSubmit = data => console.log(data);
@@ -14,7 +16,13 @@ const Home = () => {
     // const getSearchText = watch('SearchText')
 
     return (
-        <div className="bg-[#fafafa] min-h-full">
+        <div className="bg-[#fafafa] min-h-full relative">
+            <div className="fixed top-[60px]">
+                <img className="h-[516px] max-w-[375px]" src={HomeBG1} alt="" />
+            </div>
+            <div className="fixed bottom-[79px]">
+                <img className="w-full relative right-4" src={HomeBG2} alt="" />
+            </div>
             {/* Heading div */}
             <div
                 className="bg-gradient-to-br from-[#0EBE7E] to-[#07D9AD] pt-9 px-5 rounded-b-[20px] pb-[48px] relative"
@@ -45,7 +53,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div className="mt-[54px] pl-5">
+            <div className="mt-[54px] pl-5 z-10 relative">
                 <LiveSlider></LiveSlider>
             </div>
             <div className="h-[150px]">
