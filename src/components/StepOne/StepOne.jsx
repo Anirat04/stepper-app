@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const StepOne = () => {
     return (
-        <div className="h-full">
+        <div className="bg-[#f8f7ff] h-full">
             <div className="">
                 <img className="w-full" src="https://i.ibb.co/P5RQ9MP/uiux-design-Figma-removebg-preview-1.png" alt="" />
             </div>

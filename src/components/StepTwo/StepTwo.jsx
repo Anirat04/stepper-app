@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 
-
+// TODO: Fix the bottom padding/margin
 const StepTwo = () => {
     return (
-        <div className="h-full">
+        <div className="bg-[#f8f7ff] h-full">
             <div className="">
                 <img className="w-full" src="https://i.ibb.co/GP0mrLh/uiux-design-Figma-1-removebg-preview.png" alt="" />
             </div>

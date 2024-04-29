@@ -5,6 +5,7 @@ import IconsSlider from "../../../components/HomeComponents/IconsSlider/IconsSli
 import PopularDoctors from "../../../components/HomeComponents/PopularDoctors/PopularDoctors";
 import FeatureDoctor from "../../../components/HomeComponents/FeatureDoctor/FeatureDoctor";
 
+//  TODO: Homepage Background color effect should be applied
 const Home = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm()
     const onSubmit = data => console.log(data);

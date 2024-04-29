@@ -16,6 +16,7 @@ import VerificationCode from './components/VerificationCode/VerificationCode.jsx
 import ResetPass from './components/ResetPass/ResetPass.jsx';
 import MainLayout from './Layout/MainLayout.jsx';
 import Home from './Layout/Pages/Home/Home.jsx';
+import LiveViewer from './Layout/Pages/LiveViewer/LiveViewer.jsx';
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
       {
         path: "login/forgot-pass/verificationCode/resetPass",
         element: <ResetPass></ResetPass>
+      },
+      {
+        path: "/live-viewer",
+        element: <LiveViewer></LiveViewer>
       },
     ]
   },
