@@ -35,12 +35,12 @@ const Home = () => {
                             <img className="w-[60px] h-[60px] rounded-full" src={RandomGirlImage} alt="" />
                         </div>
                         <div className="absolute -bottom-[27px] w-full left-0 px-5">
-                            <form onSubmit={handleSubmit(onSubmit)} className="w-full relative">
+                            <form onSubmit={handleSubmit(onSubmit)} className="w-full relative z-[99999]">
                                 <input
                                     type="search"
                                     placeholder="Search..."
                                     {...register("SearchText")}
-                                    className="py-[18px] pl-[45px] pr-5 text-[15px] text-[#677294] w-full rounded-md outline-0 border border-[#ffffff] focus-within:border-gray-200 shadow-md"
+                                    className="bg-white py-[18px] pl-[45px] pr-5 text-[15px] text-[#677294] w-full rounded-md outline-0 border border-[#ffffff] focus-within:border-gray-200 shadow-md"
                                 />
                                 <span className="absolute top-1/2 -translate-y-1/2 left-5">
                                     <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">

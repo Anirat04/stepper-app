@@ -24,11 +24,11 @@ const LiveViewer = () => {
 
     return (
         <>
-            <div className='font-rubik h-full relative'>
+            <div className='font-rubik relative bg-red-300 min-h-screen'>
                 {/* Div for video stream content */}
-                <div className='h-full bg-gray-300 relative'>
+                <div className='bg-gray-300 relative max-h-screen'>
                     <div>
-                        <img className='w-full h-full' src={liveDoctorImage} alt="" />
+                        <img className='w-full h-screen' src={liveDoctorImage} alt="" />
                     </div>
                     <div
                         className='absolute h-[498px] w-full bottom-0 left-0'
@@ -37,7 +37,7 @@ const LiveViewer = () => {
                         }}
                     ></div>
                 </div>
-                <div className='absolute top-0 left-0 h-full w-full pt-9 px-5 flex flex-col justify-between'>
+                <div className='absolute top-0 left-0 h-full w-full pt-9 px-5 flex  flex-col justify-between'>
                     <div className='flex justify-between'>
                         <div>
                             <Link to={"/"}>
