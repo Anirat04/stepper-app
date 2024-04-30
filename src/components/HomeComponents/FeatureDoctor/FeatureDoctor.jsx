@@ -11,6 +11,47 @@ import docImage2 from '../../../assets/images/featureDoc-2.png'
 import docImage3 from '../../../assets/images/featureDoc-3.png'
 
 const FeatureDoctor = () => {
+    // Responsive Breakpoints for swiper slider
+    const swiperBreakPoints = {
+        // when window width is >= 375px
+        375: {
+            slidesPerView: 4,
+            spaceBetween: 70
+        },
+
+        // when window width is >= 425px
+        425: {
+            slidesPerView: 4.5,
+            spaceBetween: 70
+        },
+
+        // when window width is >= 480px
+        480: {
+            slidesPerView: 5,
+            spaceBetween: 60
+        },
+
+        // when window width is >= 525px
+        525: {
+            slidesPerView: 5,
+            spaceBetween: 30
+        },
+
+        // when window width is >= 575px
+        575: {
+            slidesPerView: 5,
+            spaceBetween: 0
+        },
+
+        // when window width is >= 600px
+        600: {
+            slidesPerView: 6,
+            spaceBetween: 50
+        },
+    };
+
+
+
     return (
         <div className='font-rubik pl-5'>
             <div className="mb-3 flex items-center justify-between pr-4">
@@ -21,12 +62,9 @@ const FeatureDoctor = () => {
             <div>
                 <div>
                     <Swiper
-                        slidesPerView={4}
-                        spaceBetween={90}
-                        // pagination={{
-                        //     clickable: true,
-                        // }}
-                        // modules={[Pagination]}
+                        slidesPerView={3}
+                        spaceBetween={20}
+                        breakpoints={swiperBreakPoints}
                         className="mySwiper py-12"
                     >
                         <SwiperSlide>

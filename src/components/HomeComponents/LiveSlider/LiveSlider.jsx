@@ -16,6 +16,37 @@ import liveImage3 from "../../../assets/images/Live-doctor-image-3.jpeg"
 import { Link } from 'react-router-dom';
 
 const LiveSlider = () => {
+
+    // Responsive Breakpoints for swiper slider
+    const swiperBreakPoints = {
+        // when window width is >= 375px
+        375: {
+            slidesPerView: 3,
+            spaceBetween: 30
+        },
+        // when window width is >= 425px
+        425: {
+            slidesPerView: 3.5,
+            spaceBetween: 45
+        },
+        // when window width is >= 500px
+        500: {
+            slidesPerView: 4,
+            spaceBetween: 40
+        },
+        // when window width is >= 575px
+        575: {
+            slidesPerView: 4.5,
+            spaceBetween: 40
+        },
+        // when window width is >= 600px
+        600: {
+            slidesPerView: 5,
+            spaceBetween: 60
+        },
+    }
+
+
     return (
         <div className='font-rubik'>
             <div className='mb-3'>
@@ -26,11 +57,8 @@ const LiveSlider = () => {
                 <div>
                     <Swiper
                         slidesPerView={3}
-                        spaceBetween={60}
-                        // pagination={{
-                        //     clickable: true,
-                        // }}
-                        // modules={[Pagination]}
+                        spaceBetween={90}
+                        breakpoints={swiperBreakPoints}
                         className="mySwiper"
                     >
                         <SwiperSlide>
@@ -254,7 +282,7 @@ const LiveSlider = () => {
                     </Swiper>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

@@ -20,7 +20,7 @@ const Home = () => {
             <div className="fixed top-[60px]">
                 <img className="h-[516px] max-w-[375px]" src={HomeBG1} alt="" />
             </div>
-            <div className="fixed bottom-0">
+            <div className="fixed bottom-0 right-0">
                 <img className="w-full relative" src={HomeBG2} alt="" />
             </div>
             <div className="relative z-10">

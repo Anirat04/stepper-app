@@ -9,6 +9,42 @@ import popularDoc1 from "../../../assets/images/popularDoctor-1.png"
 import { FreeMode } from 'swiper/modules';
 
 const PopularDoctors = () => {
+
+    // Responsive Breakpoints for swiper slider
+    const swiperBreakPoints = {
+        // when window width is >= 375px
+        375: {
+            slidesPerView: 2,
+            spaceBetween: 60
+        },
+        // when window width is >= 425px
+        425: {
+            slidesPerView: 2,
+            spaceBetween: 10
+        },
+        // when window width is >= 480px
+        480: {
+            slidesPerView: 2.5,
+            spaceBetween: 60
+        },
+        // when window width is >= 525px
+        525: {
+            slidesPerView: 3,
+            spaceBetween: 100
+        },
+        // when window width is >= 575px
+        575: {
+            slidesPerView: 3.5,
+            spaceBetween: 140
+        },
+        // when window width is >= 600px
+        600: {
+            slidesPerView: 3,
+            spaceBetween: 60
+        },
+    }
+
+
     return (
         <div className='font-rubik pl-5'>
             <div className="mb-3 flex items-center justify-between pr-4">
@@ -20,7 +56,8 @@ const PopularDoctors = () => {
                 <div>
                     <Swiper
                         slidesPerView={2}
-                        spaceBetween={80}
+                        spaceBetween={112}
+                        breakpoints={swiperBreakPoints}
                         freeMode={true}
                         modules={[FreeMode]}
                         className="mySwiper"

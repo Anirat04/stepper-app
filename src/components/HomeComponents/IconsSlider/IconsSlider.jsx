@@ -10,16 +10,44 @@ import group3_svg from '../../../assets/images/Group-SVGs/Group 670.svg'
 import group4_svg from '../../../assets/images/Group-SVGs/Group 669.svg'
 
 const IconsSlider = () => {
+
+    // Responsive Breakpoints for swiper slider
+    const swiperBreakPoints = {
+        // when window width is >= 375px
+        375: {
+            slidesPerView: 4,
+            spaceBetween: 10
+        },
+        // when window width is >= 425px
+        425: {
+            slidesPerView: 4.5,
+            spaceBetween: 10
+        },
+        // when window width is >= 480px
+        480: {
+            slidesPerView: 6,
+            spaceBetween: 55
+        },
+        // when window width is >= 575px
+        575: {
+            slidesPerView: 6,
+            spaceBetween: 30
+        },
+        // when window width is >= 600px
+        600: {
+            slidesPerView: 7,
+            spaceBetween: 60
+        },
+    }
+
+
     return (
         <>
             <div className='pl-5 py-[30px]'>
                 <Swiper
-                    slidesPerView={4}
-                    spaceBetween={30}
-                    // pagination={{
-                    //     clickable: true,
-                    // }}
-                    // modules={[Pagination]}
+                    slidesPerView={3.5}
+                    spaceBetween={18}
+                    breakpoints={swiperBreakPoints}
                     className="mySwiper"
                 >
                     <SwiperSlide>
