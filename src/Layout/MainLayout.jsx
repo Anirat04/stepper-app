@@ -13,7 +13,7 @@ const MainLayout = () => {
         //         </div>
         //     </div>
         // </div>
-        <div className='min-h-full'>
+        <div>
             <Outlet></Outlet>
         </div>
     );
