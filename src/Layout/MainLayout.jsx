@@ -8,7 +8,7 @@ const MainLayout = () => {
     console.log("Getting session Data from anywhere", sessionData);
 
     return (
-        <div>
+        <div className="max-w-[600px]">
             <Outlet></Outlet>
         </div>
     );

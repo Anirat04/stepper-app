@@ -1,11 +1,11 @@
 import { createContext, useCallback, useEffect, useState } from "react";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState(true);
+    // const [loading, setLoading] = useState(true);
     const [sessionData, setSessionData] = useState(null);
 
     useEffect(() => {
@@ -40,14 +40,14 @@ const AuthProvider = ({ children }) => {
     }, [user?.sessionid, user?.email]);
 
     useEffect(() => {
-        setLoading(true)
+        // setLoading(true)
         getSessionData()
     }, [getSessionData])
     // Code for getting session data ends here 
 
 
     const authInfo = {
-        loading,
+        // loading,
         user,
         sessionData,
     };
@@ -58,6 +58,6 @@ const AuthProvider = ({ children }) => {
 };
 
 export default AuthProvider;
-// AuthProvider.propTypes = {
-//     children: PropTypes.node,
-// };
+AuthProvider.propTypes = {
+    children: PropTypes.node,
+};

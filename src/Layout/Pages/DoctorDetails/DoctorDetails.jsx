@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const DoctorDetails = () => {
     // const [dateSelected, setDateSelected] = useState(false)
     return (
-        <div className="font-rubik relative min-h-svh max-h-svh bg-gray-500">
+        <div className="font-rubik relative max-h-shv bg-gray-500">
             <div className="relative">
                 <img className="w-full min-h-[375px] max-h-[46%]" src={doctorIMG} alt="" />
                 <div className="absolute top-9 left-0 flex justify-between w-full px-5">
@@ -38,13 +38,13 @@ const DoctorDetails = () => {
                     </div>
                 </div>
             </div>
-            <div className="bg-white rounded-t-[30px] h-fit w-full absolute top-[335px]">
+            <div className="bg-white rounded-t-[30px] h-fit w-full absolute top-[335px] ">
                 <div className="flex justify-between items-center px-5 pt-5">
                     <div>
                         <h2 className="text-[18px] font-medium">John Wilson</h2>
                         <h3 className="text-[13px]">Cardiology</h3>
                     </div>
-                    <div className="flex items-center  gap-1">
+                    <div className="flex items-center gap-1 bg-[#FEFCF5] p-1 rounded-[5px]">
                         <div>
                             <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect y="0.199951" width="18" height="18" fill="url(#pattern0_149_126)" />

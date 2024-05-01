@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.3",
+    "@smastrom/react-rating": "^1.5.0",
     "emoji-picker-react": "^4.9.2",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
