@@ -17,6 +17,8 @@ import ResetPass from './components/ResetPass/ResetPass.jsx';
 import MainLayout from './Layout/MainLayout.jsx';
 import Home from './Layout/Pages/Home/Home.jsx';
 import LiveViewer from './Layout/Pages/LiveViewer/LiveViewer.jsx';
+import AuthProvider from './Providers/AuthProvider.jsx';
+import DoctorDetails from './Layout/Pages/DoctorDetails/DoctorDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -63,12 +65,18 @@ const router = createBrowserRouter([
         path: "/live-viewer",
         element: <LiveViewer></LiveViewer>
       },
+      {
+        path: "doctor-details",
+        element: <DoctorDetails></DoctorDetails>
+      }
     ]
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )

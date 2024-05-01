@@ -14,6 +14,8 @@ const Home = () => {
     // console.log(errors);
 
     // const getSearchText = watch('SearchText')
+    
+
 
     return (
         <div className="bg-[#fafafa] min-h-full relative">

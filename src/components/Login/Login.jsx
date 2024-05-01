@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { CiUser } from "react-icons/ci";
 import { CiLock } from "react-icons/ci";
 import { PiEyeLight } from 'react-icons/pi';
 import { PiEyeSlashThin } from "react-icons/pi";
@@ -40,6 +39,16 @@ const Login = () => {
 
             const responseData = await response.json()
             console.log(responseData);
+
+            const userData = {
+                email: data.email,
+                sessionid: responseData.sessionid,
+            }
+
+            if (response.ok) {
+                console.log('userData saved to local storage');
+                localStorage.setItem('userData', JSON.stringify(userData));
+            }
 
         } catch (error) {
             console.log('Error:', error);
