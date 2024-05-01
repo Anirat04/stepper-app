@@ -8,9 +8,16 @@ import HomeBG1 from "../../../assets/images/Home-bg/Ellipse 142.png"
 import HomeBG2 from "../../../assets/images/Home-bg/Ellipse 143.png"
 import { NavLink } from "react-router-dom";
 
-//  TODO: Homepage Background color effect should be applied **Properly**
+// TODO: Homepage Background color effect should be applied **Properly**
+// TODO: Homepage NavBar must be in separate component
+// TODO: Header section have to  move to separate component
 const Home = () => {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm()
+    const {
+        register,
+        handleSubmit,
+        // watch,
+        // formState: { errors }
+    } = useForm()
     const onSubmit = data => console.log(data);
     // console.log(errors);
 
@@ -117,7 +124,7 @@ const Home = () => {
             <div className="fixed bottom-0 right-0">
                 <img className="w-full relative" src={HomeBG2} alt="" />
             </div>
-            <div className="relative z-10">
+            <div className="relative">
                 {/* Heading div */}
                 <div className="bg-gradient-to-br from-[#0EBE7E] to-[#07D9AD] pt-9 px-5 rounded-b-[20px] pb-[48px] relative">
                     <div className="flex justify-between">
@@ -134,7 +141,8 @@ const Home = () => {
                                     type="search"
                                     placeholder="Search..."
                                     {...register("SearchText")}
-                                    className="bg-white py-[18px] pl-[45px] pr-5 text-[15px] text-[#677294] w-full rounded-md outline-0 border border-[#ffffff] focus-within:border-gray-200 shadow-md"
+                                    className="bg-white py-[18px] pl-[45px] pr-5 text-[15px] text-[#677294] w-full rounded-md outline-0 border border-[#ffffff] focus-within:border-gray-200"
+                                    style={{ boxShadow: "0 0 20px 0 #00000014" }}
                                 />
                                 <span className="absolute top-1/2 -translate-y-1/2 left-5">
                                     <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -155,19 +163,22 @@ const Home = () => {
                 <div className="">
                     <PopularDoctors></PopularDoctors>
                 </div>
-                <div className="py-[30px]">
+                <div className="py-[30px] relative">
                     <FeatureDoctor></FeatureDoctor>
                 </div>
             </div>
             {/* Bottom nav */}
-            <div className="sticky w-full bottom-0 left-0 z-[9999999]">
-                <div className=" bg-white rounded-t-[15px] pb-5 pt-4 overflow-y-hidden">
+            <div className="sticky w-full bottom-0 left-0 z-[999]">
+                <div
+                    className=" bg-white rounded-t-[15px] pb-5 pt-4 overflow-y-hidden"
+                    style={{ boxShadow: "0px 1px 15px 0px #00000040" }}
+                >
                     <ul className="flex justify-evenly">
                         {navlinks}
                     </ul>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
