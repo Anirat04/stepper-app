@@ -58,7 +58,7 @@ const Home = () => {
                 </NavLink>
             </li>
             <li>
-                <NavLink>
+                <NavLink to={'bookings'}>
                     <div className="flex flex-col items-center justify-center gap-[2px]">
                         <div className="active-circle bg-[#0165FC] w-[18px] h-[9px] rounded-b-full absolute top-0 hidden"></div>
                         <div>

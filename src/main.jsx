@@ -19,6 +19,7 @@ import Home from './Layout/Pages/Home/Home.jsx';
 import LiveViewer from './Layout/Pages/LiveViewer/LiveViewer.jsx';
 import AuthProvider from './Providers/AuthProvider.jsx';
 import DoctorDetails from './Layout/Pages/DoctorDetails/DoctorDetails.jsx';
+import Bookings from './Layout/Pages/Bookings/Bookings.jsx';
 
 const router = createBrowserRouter([
   {
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
       {
         path: "doctor-details",
         element: <DoctorDetails></DoctorDetails>
+      },
+      {
+        path: "bookings",
+        element: <Bookings></Bookings>
       }
     ]
   },
