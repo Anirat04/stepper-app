@@ -15,36 +15,36 @@ const CancAppointment = () => {
         <div className="py-5">
           <h3 className="text-[18px] font-semibold mb-4">Reason for Schedule Change</h3>
           <div className="flex flex-col gap-2">
-            <div className="flex gap-3">
-                <input type="radio" />
+            <div className="flex gap-3 items-center">
+                <input name='reason' type="radio" />
                 <p>I want to change to another doctor</p>
             </div>
-            <div className="flex gap-3">
-                <input type="radio" />
+            <div className="flex gap-3 items-center">
+                <input name='reason' type="radio" />
                 <p>I want to change package</p>
             </div>
-            <div className="flex gap-3">
-                <input type="radio" />
+            <div className="flex gap-3 items-center">
+                <input name='reason' type="radio" />
                 <p>I don&apos;t want to consult</p>
             </div>
-            <div className="flex gap-3">
-                <input type="radio" />
+            <div className="flex gap-3 items-center">
+                <input name='reason' type="radio" />
                 <p>I have recovered from the disease </p>
             </div>
-            <div className="flex gap-3">
-                <input type="radio" />
+            <div className="flex gap-3 items-center">
+                <input name='reason' type="radio" />
                 <p>I have found a suitable medicine</p>
             </div>
-            <div className="flex gap-3">
-                <input type="radio" />
+            <div className="flex gap-3 items-center">
+                <input name='reason' type="radio" />
                 <p>I just want to cancel</p>
             </div>
-            <div className="flex gap-3">
-                <input type="radio" />
+            <div className="flex gap-3 items-center">
+                <input name='reason' type="radio" />
                 <p>I don&apos;t want to tell</p>
             </div>
-            <div className="flex gap-3">
-                <input type="radio" />
+            <div className="flex gap-3 items-center">
+                <input name='reason' type="radio" />
                 <p>Others</p>
             </div>
           </div>
