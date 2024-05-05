@@ -20,6 +20,7 @@ import Bookings from "./Layout/Pages/Bookings/Bookings.jsx";
 import SelectPackage from "./components/SelectPackage/SelectPackage.jsx";
 import ReAppointment from "./components/ReAppointment/ReAppointment.jsx";
 import CancAppointment from "./components/CancAppointment/CancAppointment.jsx";
+import ChatCompo from "./components/ChatCompo/ChatCompo.jsx";
 
 const router = createBrowserRouter([
   {
@@ -85,6 +86,10 @@ const router = createBrowserRouter([
       {
         path: "cancApo",
         element: <CancAppointment></CancAppointment>,
+      },
+      {
+        path: "chat",
+        element: <ChatCompo></ChatCompo>,
       },
     ],
   },
