@@ -1,8 +1,8 @@
-
 import { IoMdArrowBack } from "react-icons/io";
 import { TbMessageCircle2Filled } from "react-icons/tb";
 import { HiClock } from "react-icons/hi2";
 import { IoMdArrowDropdown } from "react-icons/io";
+import "./style.css";
 
 const SelectPackage = () => {
   return (
@@ -19,95 +19,111 @@ const SelectPackage = () => {
         <div className="py-5">
           <h3 className="text-[18px] font-semibold">Select Duration</h3>
           <div className="pt-5">
-            <div className="bg-[#f0f0f0] flex items-center justify-between p-5 rounded-xl">
-              <div className="flex items-center gap-2">
-                <HiClock />
-                <p>30 minutes</p>
+            <form className="relative">
+              <select
+                name="duration"
+                id="duration"
+                className="bg-[#f0f0f0] w-full outline-0 pl-14 pr-5 py-5 rounded-xl"
+              >
+                <option value="30" className="bg-[#f0f0f0] h-[40px]">
+                  30 minutes
+                </option>
+                <option value="45" className="bg-[#f0f0f0] h-[40px]">
+                  45 minutes
+                </option>
+                <option value="60" className="bg-[#f0f0f0] h-[40px]">
+                  60 minutes
+                </option>
+              </select>
+              <div className="absolute top-1/2 -translate-y-1/2 left-5">
+                <HiClock className="text-[22px]" />
               </div>
-              <div>
-                <IoMdArrowDropdown />
+              <div className="absolute top-1/2 -translate-y-1/2 right-5">
+                <IoMdArrowDropdown className="text-[22px]" />
               </div>
-            </div>
+            </form>
           </div>
         </div>
         <div className="">
           <h3 className="text-[18px] font-semibold">Select Package</h3>
           <div>
-            {/* Chat */}
-            <div className="bg-white rounded-xl py-5 px-5 flex justify-between my-5">
-              <div className="flex items-center gap-4">
-                <div className="h-12 w-12 bg-[#e5edfe] flex justify-center items-center rounded-full">
-                  <TbMessageCircle2Filled />
+            <form>
+              {/* Chat */}
+              <div className="bg-white rounded-xl py-5 px-5 flex justify-between my-5">
+                <div className="flex items-center gap-4">
+                  <div className="h-12 w-12 bg-[#e5edfe] flex justify-center items-center rounded-full">
+                    <TbMessageCircle2Filled />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-[14px]">Messaging</h3>
+                    <p className="text-[12px] text-[#677294]">
+                      Chat message with doctor
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-[14px]">Messaging</h3>
-                  <p className="text-[12px] text-[#677294]">
-                    Chat message with doctor
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="text-center">
-                  <h3 className="text-[18px] font-semibold text-[#246bfd]">
-                    $20
-                  </h3>
-                  <p className="text-[12px] text-[#677294]">/30 mins</p>
-                </div>
-                <div>
-                  <input type="radio" />
-                </div>
-              </div>
-            </div>
-            {/* Voice call */}
-            <div className="bg-white rounded-xl py-5 px-5 flex justify-between my-5">
-              <div className="flex items-center gap-4">
-                <div className="h-12 w-12 bg-[#e5edfe] flex justify-center items-center rounded-full">
-                  <TbMessageCircle2Filled />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-[14px]">Voice Call</h3>
-                  <p className="text-[12px] text-[#677294]">
-                    Voice call with doctor
-                  </p>
+                <div className="flex items-center gap-4">
+                  <div className="text-center">
+                    <h3 className="text-[18px] font-semibold text-[#246bfd]">
+                      $20
+                    </h3>
+                    <p className="text-[12px] text-[#677294]">/30 mins</p>
+                  </div>
+                  <div>
+                    <input name="price" value={20} type="radio" />
+                  </div>
                 </div>
               </div>
-              <div className="flex items-center gap-4">
-                <div className="text-center">
-                  <h3 className="text-[18px] font-semibold text-[#246bfd]">
-                    $40
-                  </h3>
-                  <p className="text-[12px] text-[#677294]">/30 mins</p>
+              {/* Voice call */}
+              <div className="bg-white rounded-xl py-5 px-5 flex justify-between my-5">
+                <div className="flex items-center gap-4">
+                  <div className="h-12 w-12 bg-[#e5edfe] flex justify-center items-center rounded-full">
+                    <TbMessageCircle2Filled />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-[14px]">Voice Call</h3>
+                    <p className="text-[12px] text-[#677294]">
+                      Voice call with doctor
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <input type="radio" />
-                </div>
-              </div>
-            </div>
-            {/* Video Call */}
-            <div className="bg-white rounded-xl py-5 px-5 flex justify-between my-5">
-              <div className="flex items-center gap-4">
-                <div className="h-12 w-12 bg-[#e5edfe] flex justify-center items-center rounded-full">
-                  <TbMessageCircle2Filled />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-[14px]">Video Call</h3>
-                  <p className="text-[12px] text-[#677294]">
-                    Video call with doctor
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="text-center">
-                  <h3 className="text-[18px] font-semibold text-[#246bfd]">
-                    $60
-                  </h3>
-                  <p className="text-[12px] text-[#677294]">/30 mins</p>
-                </div>
-                <div>
-                  <input type="radio" />
+                <div className="flex items-center gap-4">
+                  <div className="text-center">
+                    <h3 className="text-[18px] font-semibold text-[#246bfd]">
+                      $40
+                    </h3>
+                    <p className="text-[12px] text-[#677294]">/30 mins</p>
+                  </div>
+                  <div>
+                    <input name="price" value={40} type="radio" />
+                  </div>
                 </div>
               </div>
-            </div>
+              {/* Video Call */}
+              <div className="bg-white rounded-xl py-5 px-5 flex justify-between my-5">
+                <div className="flex items-center gap-4">
+                  <div className="h-12 w-12 bg-[#e5edfe] flex justify-center items-center rounded-full">
+                    <TbMessageCircle2Filled />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-[14px]">Video Call</h3>
+                    <p className="text-[12px] text-[#677294]">
+                      Video call with doctor
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="text-center">
+                    <h3 className="text-[18px] font-semibold text-[#246bfd]">
+                      $60
+                    </h3>
+                    <p className="text-[12px] text-[#677294]">/30 mins</p>
+                  </div>
+                  <div>
+                    <input name="price" value={60} type="radio" />
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
