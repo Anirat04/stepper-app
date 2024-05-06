@@ -29,11 +29,17 @@ const AuthProvider = ({ children }) => {
             });
 
             if (!sessionResponse.ok) {
-                throw new Error('Failed to perform the session request');
+                throw new Error('Failed to perform the session data request');
             }
-            const sessionResponseData = await sessionResponse.json();
-            setSessionData(sessionResponseData.data)
-            // console.log(sessionResponseData);
+            
+            if(sessionResponse.status === 200){
+                const sessionResponseData = await sessionResponse.json();
+                setSessionData(sessionResponseData.data)
+                console.log(sessionResponseData);
+            } else {
+                console.log('Failed to perform the session data request');
+            }
+
         } catch (error) {
             console.error('Error fetching session data:', error);
         }
