@@ -2,7 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 // import App from './App.jsx'
 import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  useNavigate,
+} from "react-router-dom";
 import StepOne from "./components/StepOne/StepOne.jsx";
 import StepTwo from "./components/StepTwo/StepTwo.jsx";
 import StepThree from "./components/StepThree/StepThree.jsx";
@@ -21,6 +25,7 @@ import SelectPackage from "./components/SelectPackage/SelectPackage.jsx";
 import ReAppointment from "./components/ReAppointment/ReAppointment.jsx";
 import CancAppointment from "./components/CancAppointment/CancAppointment.jsx";
 import ChatCompo from "./components/ChatCompo/ChatCompo.jsx";
+import VideoConsulting from "./Layout/Pages/VideoConsulting/VideoConsulting.jsx";
 
 const router = createBrowserRouter([
   {
@@ -90,6 +95,10 @@ const router = createBrowserRouter([
       {
         path: "chat",
         element: <ChatCompo></ChatCompo>,
+      },
+      {
+        path: "vdo-con",
+        element: <VideoConsulting></VideoConsulting>,
       },
     ],
   },
