@@ -26,6 +26,7 @@ import ReAppointment from "./components/ReAppointment/ReAppointment.jsx";
 import CancAppointment from "./components/CancAppointment/CancAppointment.jsx";
 import ChatCompo from "./components/ChatCompo/ChatCompo.jsx";
 import VideoConsulting from "./Layout/Pages/VideoConsulting/VideoConsulting.jsx";
+import DoctorReview from "./Layout/Pages/DoctorReview/DoctorReview.jsx";
 
 const router = createBrowserRouter([
   {
@@ -99,6 +100,10 @@ const router = createBrowserRouter([
       {
         path: "vdo-con",
         element: <VideoConsulting></VideoConsulting>,
+      },
+      {
+        path: "/vdo-con/doc-review",
+        element: <DoctorReview></DoctorReview>,
       },
     ],
   },

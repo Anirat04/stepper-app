@@ -4,6 +4,7 @@ import { BsMicMute } from "react-icons/bs";
 import { CiVideoOn } from "react-icons/ci";
 import { CiVideoOff } from "react-icons/ci";
 import { PiPhoneCall } from "react-icons/pi";
+import { Link } from "react-router-dom";
 
 const VideoConsulting = () => {
     const [isMicOn, setIsMicOn] = useState(true);
@@ -54,9 +55,11 @@ const VideoConsulting = () => {
                                         isMicOn ? <BsMic className="text-white text-[24px]" /> : <BsMicMute className="text-white text-[24px]" />
                                     }
                                 </div>
-                                <div className="bg-[#DC5F5F] w-fit p-5 rounded-full">
-                                    <PiPhoneCall className="text-white text-[24px]" />
-                                </div>
+                                <Link to={'doc-review'}>
+                                    <div className="bg-[#DC5F5F] w-fit p-5 rounded-full">
+                                        <PiPhoneCall className="text-white text-[24px]" />
+                                    </div>
+                                </Link>
                                 <div className="bg-[#8F8F92] w-fit p-3 rounded-full" onClick={handleCamOn}>
                                     {
                                         isCamOn ? <CiVideoOn className="text-white text-[24px]" /> : <CiVideoOff className="text-white text-[24px]" />
