@@ -27,6 +27,8 @@ import CancAppointment from "./components/CancAppointment/CancAppointment.jsx";
 import ChatCompo from "./components/ChatCompo/ChatCompo.jsx";
 import VideoConsulting from "./Layout/Pages/VideoConsulting/VideoConsulting.jsx";
 import DoctorReview from "./Layout/Pages/DoctorReview/DoctorReview.jsx";
+import TermsConditions from "./components/Terms&Conditions/TermsConditions.jsx";
+import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy.jsx";
 
 const router = createBrowserRouter([
   {
@@ -104,6 +106,14 @@ const router = createBrowserRouter([
       {
         path: "/vdo-con/doc-review",
         element: <DoctorReview></DoctorReview>,
+      },
+      {
+        path: "terms",
+        element: <TermsConditions></TermsConditions>,
+      },
+      {
+        path: "privacyPolicy",
+        element: <PrivacyPolicy></PrivacyPolicy>,
       },
     ],
   },

@@ -8,7 +8,7 @@ const DoctorReview = () => {
         <div className="min-h-svh pt-9 relative pb-8 px-5">
             <div className="absolute top-9 left-0 flex text-center w-full px-5">
                 <div>
-                    <Link to={'/'}>
+                    <Link to={'/vdo-con'}>
                         <svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect y="0.5" width="25" height="25" fill="url(#pattern0_149_75)" />
                             <defs>
