@@ -22,7 +22,7 @@ const ReAppointment = () => {
         </div>
         <div className="py-5">
           <h3 className="text-[18px] font-semibold mb-4">Select Date</h3>
-          <div className="bg-[#eef4ff] h-[250px] w-full rounded-2xl p-5">
+          <div className="bg-[#eef4ff] h-fit w-full rounded-2xl p-5">
             <Calendar
               formatShortWeekday={(locale, date) => [ `Su`, `Mo`, `Tu`, `We`, `Th`, `Fr`, `Sa` ][date.getDay()]}
               next2Label={false}
@@ -74,7 +74,7 @@ const ReAppointment = () => {
           </div>
         </div>
       </div>
-      <div className="mb-8">
+      <div className="pb-8">
         <button className="btn btn-primary w-full rounded-full bg-[#246bfd] border-none text-white">
           Next
         </button>
