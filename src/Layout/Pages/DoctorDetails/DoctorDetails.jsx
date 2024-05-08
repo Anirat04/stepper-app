@@ -1,14 +1,65 @@
-import { useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import doctorIMG from "../../../assets/images/DoctorDetails/doctor-details-1.png"
 import SelectDate from "../../../components/DoctorDetailComponents/SelectDate/SelectDate";
 import SelectTime from "../../../components/DoctorDetailComponents/SelectTime/SelectTime";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 
 const DoctorDetails = () => {
     // const [dateSelected, setDateSelected] = useState(false)
+    const { user } = useContext(AuthContext)
+    const paramsData = useParams()
+    // const [responseData, setResponseData] = useState(null);
+    // const [error, setError] = useState(null);
+    // console.log(user.sessionid);
+    // const userData = {
+    //     email: 'user1@gmail.com',
+    //     doctorid: paramsData?.id
+    // }
+    // console.log(responseData);
+    // console.log(error);
+
+
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         console.log(user?.sessionid);
+    //         try {
+    //             const requestBody = {
+    //                 email: user?.email,
+    //                 doctorid: paramsData?.id // Replace with the actual doctor ID
+    //             };
+
+    //             const requestOptions = {
+    //                 method: 'POST',
+    //                 headers: {
+    //                     'Content-Type': 'application/json',
+    //                     'Authorization': `Bearer ${user?.sessionId}`
+    //                 },
+    //                 body: JSON.stringify(requestBody)
+    //             };
+
+    //             const response = await fetch('https://api-doctors24.duckdns.org/accounts/doctor-details', requestOptions);
+    //             const responseData = await response.json();
+
+    //             if (!response.ok) {
+    //                 throw new Error(responseData.status_message || 'Failed to fetch data');
+    //             }
+    //             console.log(responseData);
+
+
+    //         } catch (error) {
+    //             console.log(error.message);
+    //         }
+    //     };
+
+    //     fetchData();
+    // }, [user?.sessionId]);
+
+
     return (
         <div className="font-rubik relative max-h-shv bg-gray-500">
+            {/* <button className="btn btn-primary" onClick={callFunction}>Data</button> */}
             <div className="relative">
                 <img className="w-full min-h-[375px] max-h-[46%]" src={doctorIMG} alt="" />
                 <div className="absolute top-9 left-0 flex justify-between w-full px-5">

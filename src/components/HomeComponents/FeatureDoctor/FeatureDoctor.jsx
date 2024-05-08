@@ -1,7 +1,4 @@
-
-
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -9,12 +6,9 @@ import 'swiper/css/pagination';
 // import docImage1 from '../../../assets/images/featureDoc-1.png'
 // import docImage2 from '../../../assets/images/featureDoc-2.png'
 // import docImage3 from '../../../assets/images/featureDoc-3.png'
-import { useContext } from 'react';
-import { AuthContext } from '../../../Providers/AuthProvider';
 
-const FeatureDoctor = () => {
-    const { sessionData } = useContext(AuthContext)
-    const featureDoctors = sessionData?.FeatureDoctors
+const FeatureDoctor = ({ doctorData }) => {
+    const featureDoctors = doctorData
     // console.log(featureDoctors);
 
     // Responsive Breakpoints for swiper slider
@@ -24,31 +18,26 @@ const FeatureDoctor = () => {
             slidesPerView: 4,
             spaceBetween: 70
         },
-
         // when window width is >= 425px
         425: {
             slidesPerView: 4.5,
             spaceBetween: 70
         },
-
         // when window width is >= 480px
         480: {
             slidesPerView: 5,
             spaceBetween: 60
         },
-
         // when window width is >= 525px
         525: {
             slidesPerView: 5,
             spaceBetween: 30
         },
-
         // when window width is >= 575px
         575: {
             slidesPerView: 5,
             spaceBetween: 0
         },
-
         // when window width is >= 600px
         600: {
             slidesPerView: 6,

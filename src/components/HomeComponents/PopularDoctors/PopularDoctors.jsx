@@ -1,20 +1,16 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-
 // import popularDoc1 from "../../../assets/images/popularDoctor-1.png"
 import { FreeMode } from 'swiper/modules';
-import { useContext } from 'react';
-import { AuthContext } from '../../../Providers/AuthProvider';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
+import { Link } from 'react-router-dom';
 
-const PopularDoctors = () => {
-    const { sessionData } = useContext(AuthContext)
-    const popularDoctors = sessionData?.PopularDoctors
+const PopularDoctors = ({doctorData}) => {
+    const popularDoctors = doctorData
 
     // Responsive Breakpoints for swiper slider
     const swiperBreakPoints = {
@@ -71,31 +67,28 @@ const PopularDoctors = () => {
                         {
                             popularDoctors?.map(item => (
                                 <SwiperSlide key={item?.doctor_id}>
-                                    <div className='h-[264px] w-[190px] bg-gray-300 rounded-[12px]'>
-                                        <div className='min-h-[180px]'>
-                                            <img className='max-h-[180px] w-full rounded-t-[12px]' src={item?.photo_url} alt="Doctors Image" />
-                                        </div>
-                                        <div className='bg-white py-[5px] rounded-b-[12px]'>
-                                            <div className='text-center'>
-                                                <h2 className='text-[18px] font-medium'>{item?.name}</h2>
-                                                <p className='text-[#677294CC] font-light'>{item?.department}</p>
-                                                <div className="rating rating-xs">
-                                                    {/* <input type="radio" name="rating-5" className="mask mask-star-2 bg-orange-400" />
-                                                        <input type="radio" name="rating-5" className="mask mask-star-2 bg-orange-400" checked />
-                                                        <input type="radio" name="rating-5" className="mask mask-star-2 bg-orange-400" />
-                                                        <input type="radio" name="rating-5" className="mask mask-star-2 bg-orange-400" />
-                                                        <input type="radio" name="rating-5" className="mask mask-star-2 bg-orange-400" /> */}
-                                                    <div>
-                                                        <Rating
-                                                            style={{ maxWidth: 70 }}
-                                                            value={item?.rating}
-                                                            readOnly={true}
-                                                        ></Rating>
+                                    <Link to={`doctor-details/${item?.doctor_id}`}>
+                                        <div className='h-[264px] w-[190px] bg-gray-300 rounded-[12px]'>
+                                            <div className='min-h-[180px]'>
+                                                <img className='max-h-[180px] w-full rounded-t-[12px]' src={item?.photo_url} alt="Doctors Image" />
+                                            </div>
+                                            <div className='bg-white py-[5px] rounded-b-[12px]'>
+                                                <div className='text-center'>
+                                                    <h2 className='text-[18px] font-medium'>{item?.name}</h2>
+                                                    <p className='text-[#677294CC] font-light'>{item?.department}</p>
+                                                    <div className="rating rating-xs">
+                                                        <div>
+                                                            <Rating
+                                                                style={{ maxWidth: 70 }}
+                                                                value={item?.rating}
+                                                                readOnly={true}
+                                                            ></Rating>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </Link>
                                 </SwiperSlide>
                             ))
                         }

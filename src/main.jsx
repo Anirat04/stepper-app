@@ -76,8 +76,9 @@ const router = createBrowserRouter([
         element: <LiveViewer></LiveViewer>,
       },
       {
-        path: "doctor-details",
+        path: "doctor-details/:id",
         element: <DoctorDetails></DoctorDetails>,
+        // loader: ({ params }) => params.id,
       },
       {
         path: "bookings",

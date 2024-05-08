@@ -6,12 +6,19 @@ import PopularDoctors from "../../../components/HomeComponents/PopularDoctors/Po
 import FeatureDoctor from "../../../components/HomeComponents/FeatureDoctor/FeatureDoctor";
 import HomeBG1 from "../../../assets/images/Home-bg/Ellipse 142.png"
 import HomeBG2 from "../../../assets/images/Home-bg/Ellipse 143.png"
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useCallback, useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 // TODO: Homepage Background color effect should be applied **Properly**
 // TODO: Homepage NavBar must be in separate component
 // TODO: Header section have to  move to separate component
 const Home = () => {
+    const { user } = useContext(AuthContext)
+    const [sessionData, setSessionData] = useState(null);
+    const PopularDoctorsData = sessionData?.PopularDoctors
+    const FeatureDoctorsData = sessionData?.FeatureDoctors
+    const navigate = useNavigate()
     const {
         register,
         handleSubmit,
@@ -22,6 +29,45 @@ const Home = () => {
     // console.log(errors);
 
     // const getSearchText = watch('SearchText')
+
+
+    // Code for getting session data starts here ---- by POST request via passing the parameters as user email and session id
+    const getSessionData = useCallback(async () => {
+        const getSessionId = user?.sessionid
+        try {
+            const sessionResponse = await fetch(
+                "https://api-doctors24.duckdns.org/accounts/dashboard",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${getSessionId}`,
+                    },
+                    body: JSON.stringify({ email: user?.email }),
+                }
+            );
+            const sessionResponseData = await sessionResponse.json();
+
+            if (sessionResponseData.status === 200) {
+                setSessionData(sessionResponseData.data);
+                console.log(sessionResponseData);
+            }
+
+            if (sessionResponseData.status !== 200) {
+                navigate('/login')
+            } else {
+                navigate('/')
+            }
+        } catch (error) {
+            navigate('/login')
+            console.error("Error fetching session data:", error);
+        }
+    }, [user?.sessionid, user?.email, navigate]);
+
+    useEffect(() => {
+        getSessionData();
+    }, [getSessionData]);
+    // Code for getting session data ends here
 
     const navlinks =
         <>
@@ -114,8 +160,6 @@ const Home = () => {
             </li>
         </>;
 
-
-
     return (
         <div className="bg-[#fafafa] min-h-full relative w-full">
             <div className="fixed top-[60px]">
@@ -161,10 +205,10 @@ const Home = () => {
                     <IconsSlider></IconsSlider>
                 </div>
                 <div className="">
-                    <PopularDoctors></PopularDoctors>
+                    <PopularDoctors doctorData={PopularDoctorsData}></PopularDoctors>
                 </div>
                 <div className="py-[30px] relative">
-                    <FeatureDoctor></FeatureDoctor>
+                    <FeatureDoctor doctorData={FeatureDoctorsData}></FeatureDoctor>
                 </div>
             </div>
             {/* Bottom nav */}
