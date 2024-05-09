@@ -50,7 +50,7 @@ const Home = () => {
 
             if (sessionResponseData.status === 200) {
                 setSessionData(sessionResponseData.data);
-                console.log(sessionResponseData);
+                // console.log(sessionResponseData);
             }
 
             if (sessionResponseData.status !== 200) {

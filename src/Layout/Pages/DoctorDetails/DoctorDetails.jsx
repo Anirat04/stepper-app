@@ -8,60 +8,57 @@ import { AuthContext } from "../../../Providers/AuthProvider";
 
 const DoctorDetails = () => {
     // const [dateSelected, setDateSelected] = useState(false)
+    const [doctorDetails, setDoctorDetails] = useState()
     const { user } = useContext(AuthContext)
     const paramsData = useParams()
-    // const [responseData, setResponseData] = useState(null);
-    // const [error, setError] = useState(null);
-    // console.log(user.sessionid);
-    // const userData = {
-    //     email: 'user1@gmail.com',
-    //     doctorid: paramsData?.id
-    // }
-    // console.log(responseData);
-    // console.log(error);
+    const doctorId = paramsData?.id
+    const userEmail = user?.email
+    const sessionId = user?.sessionid
+    const { appointment, dapartment, description, image, name, rating } = doctorDetails || {};
+    const DateArray = appointment?.date
+    const TimeArray = appointment?.time
+    // console.log(DateArray, TimeArray);
+    // console.log(doctorDetails);
+    // console.log( appointment, dapartment, description, image, name, rating);
 
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch('https://api-doctors24.duckdns.org/accounts/doctor-details', {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${sessionId}`
+                    },
+                    body: JSON.stringify({
+                        "email": `${userEmail}`,
+                        "doctorid": `${doctorId}`
+                    }),
+                    redirect: "follow"
+                });
+                const responseData = await response.json();
 
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         console.log(user?.sessionid);
-    //         try {
-    //             const requestBody = {
-    //                 email: user?.email,
-    //                 doctorid: paramsData?.id // Replace with the actual doctor ID
-    //             };
+                if (!response.ok) {
+                    throw new Error(responseData.status_message || 'Failed to fetch data');
+                }
+                if(responseData.status === 200){
+                    setDoctorDetails(responseData.data)
+                }
+                // console.log(responseData);
+            } catch (error) {
+                console.log(error.message);
+            }
+        };
 
-    //             const requestOptions = {
-    //                 method: 'POST',
-    //                 headers: {
-    //                     'Content-Type': 'application/json',
-    //                     'Authorization': `Bearer ${user?.sessionId}`
-    //                 },
-    //                 body: JSON.stringify(requestBody)
-    //             };
-
-    //             const response = await fetch('https://api-doctors24.duckdns.org/accounts/doctor-details', requestOptions);
-    //             const responseData = await response.json();
-
-    //             if (!response.ok) {
-    //                 throw new Error(responseData.status_message || 'Failed to fetch data');
-    //             }
-    //             console.log(responseData);
-
-
-    //         } catch (error) {
-    //             console.log(error.message);
-    //         }
-    //     };
-
-    //     fetchData();
-    // }, [user?.sessionId]);
+        fetchData();
+    }, [doctorId, sessionId, userEmail]);
 
 
     return (
         <div className="font-rubik relative max-h-shv bg-gray-500">
             {/* <button className="btn btn-primary" onClick={callFunction}>Data</button> */}
             <div className="relative">
-                <img className="w-full min-h-[375px] max-h-[46%]" src={doctorIMG} alt="" />
+                <img className="w-full min-h-[375px] max-h-[46%]" src={image ? image : doctorIMG} alt="Doctor Image" />
                 <div className="absolute top-9 left-0 flex justify-between w-full px-5">
                     <div>
                         <Link to={'/'}>
@@ -92,8 +89,8 @@ const DoctorDetails = () => {
             <div className="bg-white rounded-t-[30px] h-fit w-full absolute top-[335px] ">
                 <div className="flex justify-between items-center px-5 pt-5">
                     <div>
-                        <h2 className="text-[18px] font-medium">John Wilson</h2>
-                        <h3 className="text-[13px]">Cardiology</h3>
+                        <h2 className="text-[18px] font-medium">{name ? name : 'Doctor name is null'}</h2>
+                        <h3 className="text-[13px]">{dapartment}</h3>
                     </div>
                     <div className="flex items-center gap-1 bg-[#FEFCF5] p-1 rounded-[5px]">
                         <div>
@@ -108,27 +105,27 @@ const DoctorDetails = () => {
                             </svg>
                         </div>
                         <div>
-                            <p className="text-[14px]">4.8</p>
+                            <p className="text-[14px]">{rating}</p>
                         </div>
                     </div>
                 </div>
                 {/* Description */}
                 <div className="px-5 my-8">
                     <h3 className="text-[15px] font-semibold">Description</h3>
-                    <p className="text-[12.8px]">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don&apos;t look even slightly believable.</p>
+                    <p className="text-[12.8px]">{description}</p>
                 </div>
                 {/* Select Date section */}
                 <div className="pl-5">
                     <h3 className="text-[15px] font-semibold mb-1">Select Date</h3>
                     <div>
-                        <SelectDate></SelectDate>
+                        <SelectDate DateArray={DateArray}></SelectDate>
                     </div>
                 </div>
                 {/* Select Time section */}
                 <div className="pl-5 mt-5">
                     <h3 className="text-[15px] font-semibold mb-1">Select Time</h3>
                     <div>
-                        <SelectTime></SelectTime>
+                        <SelectTime TimeArray={TimeArray}></SelectTime>
                     </div>
                 </div>
                 <div className="px-5 mt-4 mb-8">
