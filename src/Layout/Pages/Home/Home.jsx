@@ -44,8 +44,7 @@ const Home = () => {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
-                        // Authorization: `Bearer ${getSessionId}`,
-                        Authorization: `Bearer f49d46ee62c085b1117615e24353ce98`,
+                        Authorization: `Bearer ${getSessionId}`,
                     },
                     body: JSON.stringify({ email: user?.email }),
                 }
