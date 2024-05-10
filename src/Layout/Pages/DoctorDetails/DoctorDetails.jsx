@@ -18,7 +18,7 @@ const DoctorDetails = () => {
     const DateArray = appointment?.date
     const TimeArray = appointment?.time
     // console.log(DateArray, TimeArray);
-    // console.log(doctorDetails);
+    console.log(doctorDetails);
     // console.log( appointment, dapartment, description, image, name, rating);
 
     useEffect(() => {

@@ -9,6 +9,7 @@ import HomeBG2 from "../../../assets/images/Home-bg/Ellipse 143.png"
 import { NavLink, useNavigate } from "react-router-dom";
 import { useCallback, useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
+import Loader from "../../../components/Loader/Loader";
 
 // TODO: Homepage Background color effect should be applied **Properly**
 // TODO: Homepage NavBar must be in separate component
@@ -19,6 +20,8 @@ const Home = () => {
     const PopularDoctorsData = sessionData?.PopularDoctors
     const FeatureDoctorsData = sessionData?.FeatureDoctors
     const navigate = useNavigate()
+    const [loading, setLoading] = useState(true);
+    console.log(loading);
     const {
         register,
         handleSubmit,
@@ -41,23 +44,27 @@ const Home = () => {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
-                        Authorization: `Bearer ${getSessionId}`,
+                        // Authorization: `Bearer ${getSessionId}`,
+                        Authorization: `Bearer f49d46ee62c085b1117615e24353ce98`,
                     },
                     body: JSON.stringify({ email: user?.email }),
                 }
             );
             const sessionResponseData = await sessionResponse.json();
 
+            
             if (sessionResponseData.status === 200) {
                 setSessionData(sessionResponseData.data);
-                // console.log(sessionResponseData);
+                console.log(sessionResponseData);
+                setLoading(false)
             }
-
+            
             if (sessionResponseData.status !== 200) {
-                navigate('/login')
-            } else {
-                navigate('/')
+                setLoading(true)
             }
+            // else {
+            //     navigate('/')
+            // }
         } catch (error) {
             navigate('/login')
             console.error("Error fetching session data:", error);
@@ -159,6 +166,10 @@ const Home = () => {
                 </NavLink>
             </li>
         </>;
+
+    if(loading === true && sessionData === null){
+        return <Loader></Loader>
+    }
 
     return (
         <div className="bg-[#fafafa] min-h-full relative w-full">
