@@ -65,7 +65,7 @@ const Profile = () => {
                     </Link>
                     {/* Settings */}
                     <div className="divider my-0 h-fit after:h-[1px] before:h-[1px]"></div>
-                    <Link to={'/settings'}>
+                    <Link to={'settings'}>
                         <div className="flex items-center justify-between py-2">
                             <div className="flex items-center gap-3">
                                 <div><PiGearSixLight className="text-[26px] text-[#0165FC]" /></div>

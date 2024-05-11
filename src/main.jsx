@@ -31,6 +31,9 @@ import TermsConditions from "./components/Terms&Conditions/TermsConditions.jsx";
 import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy.jsx";
 import Profile from "./Layout/Pages/Profile/Profile.jsx";
 import YourProfile from "./Layout/Pages/Profile/YourProfile/YourProfile.jsx";
+import Settings from "./Layout/Pages/Profile/Settings/Settings.jsx";
+import NotificationSettings from "./Layout/Pages/Profile/Settings/NotificationSettings/NotificationSettings.jsx";
+import PasswordManager from "./Layout/Pages/Profile/Settings/PasswordManager/PasswordManager.jsx";
 
 const router = createBrowserRouter([
   {
@@ -127,6 +130,18 @@ const router = createBrowserRouter([
   {
     path: "profile/your-profile",
     element: <YourProfile></YourProfile>,
+  },
+  {
+    path: "profile/settings",
+    element: <Settings></Settings>,
+  },
+  {
+    path: "profile/settings/notification-settings",
+    element: <NotificationSettings></NotificationSettings>,
+  },
+  {
+    path: "profile/settings/password-manager",
+    element: <PasswordManager></PasswordManager>,
   },
 ]);
 

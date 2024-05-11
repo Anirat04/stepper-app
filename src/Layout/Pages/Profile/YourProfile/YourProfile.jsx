@@ -64,7 +64,7 @@ const YourProfile = () => {
                             </div>
                             <div className="relative">
                                 <label className="text-[15px]">Gender</label>
-                                <select className="w-full border px-5 py-2 rounded-md outline-0">
+                                <select className="w-full border px-5 py-2 rounded-md outline-0 bg-white">
                                     <option>Select</option>
                                     <option value="Male">Male</option>
                                     <option value="Male">Female</option>
