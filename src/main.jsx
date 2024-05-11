@@ -29,6 +29,7 @@ import VideoConsulting from "./Layout/Pages/VideoConsulting/VideoConsulting.jsx"
 import DoctorReview from "./Layout/Pages/DoctorReview/DoctorReview.jsx";
 import TermsConditions from "./components/Terms&Conditions/TermsConditions.jsx";
 import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy.jsx";
+import Profile from "./Layout/Pages/Profile/Profile.jsx";
 
 const router = createBrowserRouter([
   {
@@ -115,6 +116,10 @@ const router = createBrowserRouter([
       {
         path: "privacyPolicy",
         element: <PrivacyPolicy></PrivacyPolicy>,
+      },
+      {
+        path: "profile",
+        element: <Profile></Profile>,
       },
     ],
   },
