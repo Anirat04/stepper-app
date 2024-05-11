@@ -3,9 +3,6 @@
     -moz-appearance: none;
   } */
 
-select {
-  -webkit-appearance: none;
-}
 
 input[type="radio"] {
   box-sizing: border-box;

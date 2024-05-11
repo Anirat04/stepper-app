@@ -30,6 +30,7 @@ import DoctorReview from "./Layout/Pages/DoctorReview/DoctorReview.jsx";
 import TermsConditions from "./components/Terms&Conditions/TermsConditions.jsx";
 import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy.jsx";
 import Profile from "./Layout/Pages/Profile/Profile.jsx";
+import YourProfile from "./Layout/Pages/Profile/YourProfile/YourProfile.jsx";
 
 const router = createBrowserRouter([
   {
@@ -122,6 +123,10 @@ const router = createBrowserRouter([
         element: <Profile></Profile>,
       },
     ],
+  },
+  {
+    path: "profile/your-profile",
+    element: <YourProfile></YourProfile>,
   },
 ]);
 

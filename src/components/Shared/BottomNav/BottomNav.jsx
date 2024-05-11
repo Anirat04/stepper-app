@@ -1,10 +1,11 @@
 import { NavLink } from 'react-router-dom';
+import './BottomNav.css'
 
 const BottomNav = () => {
     const navlinks =
         <>
             <li>
-                <NavLink>
+                <NavLink to={'/'}>
                     <div className="flex flex-col items-center justify-center gap-[2px]">
                         <div className="active-circle bg-[#0165FC] w-[18px] h-[9px] rounded-b-full absolute top-0"></div>
                         <div>
@@ -20,9 +21,9 @@ const BottomNav = () => {
                 </NavLink>
             </li>
             <li>
-                <NavLink>
+                <NavLink to={'explore'}>
                     <div className="flex flex-col items-center justify-center gap-[2px]">
-                        <div className="active-circle  bg-[#0165FC] w-[18px] h-[9px] rounded-b-full absolute top-0 hidden"></div>
+                        <div className="active-circle  bg-[#0165FC] w-[18px] h-[9px] rounded-b-full absolute top-0"></div>
                         <div>
                             <svg width="17" height="21" viewBox="0 0 17 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.4" fillRule="evenodd" clipRule="evenodd" d="M8.25 0.604248C3.839 0.604248 0.25 4.38862 0.25 9.04071C0.25 14.674 4.904 20.3959 8.25 20.3959C11.595 20.3959 16.25 14.674 16.25 9.04071C16.25 4.38862 12.661 0.604248 8.25 0.604248Z" fill="#7F7F7F" />
@@ -38,7 +39,7 @@ const BottomNav = () => {
             <li>
                 <NavLink to={'bookings'}>
                     <div className="flex flex-col items-center justify-center gap-[2px]">
-                        <div className="active-circle bg-[#0165FC] w-[18px] h-[9px] rounded-b-full absolute top-0 hidden"></div>
+                        <div className="active-circle bg-[#0165FC] w-[18px] h-[9px] rounded-b-full absolute top-0"></div>
                         <div>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M16.0505 18.0901C15.596 18.0801 15.2305 17.7001 15.2305 17.2401C15.2206 16.7801 15.5862 16.4011 16.0406 16.3911H16.0505C16.5148 16.3911 16.8902 16.7711 16.8902 17.2401C16.8902 17.7101 16.5148 18.0901 16.0505 18.0901ZM12.0198 14.4101C11.5653 14.4311 11.1899 14.0701 11.1701 13.6111C11.1701 13.1511 11.5258 12.7711 11.9802 12.7501C12.4248 12.7501 12.7903 13.1011 12.8002 13.5501C12.82 14.0111 12.4643 14.3911 12.0198 14.4101ZM12.0198 18.0401C11.5653 18.0611 11.1899 17.7001 11.1701 17.2401C11.1701 16.7801 11.5258 16.4011 11.9802 16.3801C12.4248 16.3801 12.7903 16.7311 12.8002 17.1811C12.82 17.6411 12.4643 18.0211 12.0198 18.0401ZM7.95939 14.4101C7.50494 14.4311 7.12953 14.0701 7.10977 13.6111C7.10977 13.1511 7.46542 12.7711 7.91987 12.7501C8.36443 12.7501 8.72997 13.1011 8.73985 13.5501C8.7596 14.0111 8.40395 14.3911 7.95939 14.4101ZM7.94951 18.0401C7.49506 18.0611 7.11965 17.7001 7.09989 17.2401C7.09989 16.7801 7.45554 16.4011 7.90999 16.3801C8.35456 16.3801 8.72009 16.7311 8.72997 17.1811C8.74973 17.6411 8.39407 18.0211 7.94951 18.0401ZM15.2404 13.6011C15.2404 13.1411 15.596 12.7711 16.0505 12.7611C16.4951 12.7611 16.8507 13.1201 16.8705 13.5611C16.8804 14.0211 16.5247 14.4011 16.0801 14.4101C15.6257 14.4201 15.2503 14.0701 15.2404 13.6111V13.6011ZM3 9.25708V16.8701C3 20.0301 4.99561 22.0001 8.12733 22.0001H15.8628C19.0241 22.0001 21 20.0701 21 16.9311V9.25708H3Z" fill="#CCCCCC" />
@@ -54,9 +55,9 @@ const BottomNav = () => {
                 </NavLink>
             </li>
             <li>
-                <NavLink>
+                <NavLink to={'chats'}>
                     <div className="flex flex-col items-center justify-center gap-[2px]">
-                        <div className="active-circle bg-[#0165FC] w-[18px] h-[9px] rounded-b-full absolute top-0 hidden"></div>
+                        <div className="active-circle bg-[#0165FC] w-[18px] h-[9px] rounded-b-full absolute top-0"></div>
                         <div>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="24" height="24" fill="url(#pattern0_165_184)" />
@@ -77,7 +78,7 @@ const BottomNav = () => {
             <li>
                 <NavLink to={'profile'}>
                     <div className="flex flex-col items-center justify-center gap-[2px]">
-                        <div className="active-circle bg-[#0165FC] w-[18px] h-[9px] rounded-b-full absolute top-0 hidden"></div>
+                        <div className="active-circle bg-[#0165FC] w-[18px] h-[9px] rounded-b-full absolute top-0"></div>
                         <div>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fillRule="evenodd" clipRule="evenodd" d="M11.7231 11.6422H11.7528C14.34 11.6422 16.4443 9.45014 16.4443 6.75514C16.4443 4.06114 14.34 1.86914 11.7528 1.86914C9.16563 1.86914 7.06131 4.06114 7.06131 6.75314C7.05267 9.43914 9.14259 11.6322 11.7231 11.6422Z" fill="#7F7F7F" />

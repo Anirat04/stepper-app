@@ -11,9 +11,11 @@ const Profile = () => {
             <div className="mt-9">
                 <div className="text-center h-fit relative">
                     <p className="text-[18px] font-medium">Profile</p>
-                    <div className="absolute top-1/2 -translate-y-1/2 left-0 border p-2 rounded-full">
-                        <BsArrowLeft />
-                    </div>
+                    <Link to={'/'}>
+                        <div className="absolute top-1/2 -translate-y-1/2 left-0 border p-2 rounded-full">
+                            <BsArrowLeft className="text-black" />
+                        </div>
+                    </Link>
                 </div>
                 {/* Profile */}
                 <div className="flex flex-col items-center gap-5 py-8">
@@ -30,7 +32,7 @@ const Profile = () => {
                 {/* Profile links */}
                 <div>
                     {/* Your Profile */}
-                    <Link>
+                    <Link to={'your-profile'}>
                         <div className="flex items-center justify-between py-2">
                             <div className="flex items-center gap-3">
                                 <div><CiUser className="text-[26px] text-[#0165FC]" /></div>
@@ -50,7 +52,6 @@ const Profile = () => {
                             <div><SlArrowRight className="text-[#0165FC]" /></div>
                         </div>
                     </Link>
-                    <div className="divider my-0 h-fit after:h-[1px] before:h-[1px]"></div>
                     {/* Favourite */}
                     <div className="divider my-0 h-fit after:h-[1px] before:h-[1px]"></div>
                     <Link to={'/'}>
@@ -62,7 +63,6 @@ const Profile = () => {
                             <div><SlArrowRight className="text-[#0165FC]" /></div>
                         </div>
                     </Link>
-                    <div className="divider my-0 h-fit after:h-[1px] before:h-[1px]"></div>
                     {/* Settings */}
                     <div className="divider my-0 h-fit after:h-[1px] before:h-[1px]"></div>
                     <Link to={'/settings'}>
@@ -74,7 +74,6 @@ const Profile = () => {
                             <div><SlArrowRight className="text-[#0165FC]" /></div>
                         </div>
                     </Link>
-                    <div className="divider my-0 h-fit after:h-[1px] before:h-[1px]"></div>
                     {/* Help Center */}
                     <div className="divider my-0 h-fit after:h-[1px] before:h-[1px]"></div>
                     <Link to={'/settings'}>
@@ -86,7 +85,6 @@ const Profile = () => {
                             <div><SlArrowRight className="text-[#0165FC]" /></div>
                         </div>
                     </Link>
-                    <div className="divider my-0 h-fit after:h-[1px] before:h-[1px]"></div>
                     {/* Privacy Policy */}
                     <div className="divider my-0 h-fit after:h-[1px] before:h-[1px]"></div>
                     <Link to={'/settings'}>
@@ -98,7 +96,6 @@ const Profile = () => {
                             <div><SlArrowRight className="text-[#0165FC]" /></div>
                         </div>
                     </Link>
-                    <div className="divider my-0 h-fit after:h-[1px] before:h-[1px]"></div>
                     {/* Logout */}
                     <div className="divider my-0 h-fit after:h-[1px] before:h-[1px]"></div>
                     <Link to={'/settings'}>
