@@ -48,6 +48,10 @@ const router = createBrowserRouter([
         path: "profile",
         element: <Profile></Profile>,
       },
+      {
+        path: "bookings",
+        element: <Bookings></Bookings>,
+      },
     ],
   },
   //==============
@@ -91,10 +95,6 @@ const router = createBrowserRouter([
     path: "doctor-details/:id",
     element: <DoctorDetails></DoctorDetails>,
     // loader: ({ params }) => params.id,
-  },
-  {
-    path: "bookings",
-    element: <Bookings></Bookings>,
   },
   {
     path: "slp",

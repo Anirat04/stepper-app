@@ -4,7 +4,7 @@ import BookingTab from "../../../components/BookingComponents/BookingTab/Booking
 
 const Bookings = () => {
     return (
-        <div className="pt-9 relative pb-8">
+        <div className="pt-9 min-h-svh relative pb-8">
             <div className="absolute top-9 left-0 flex text-center w-full px-5">
                 <div>
                     <Link to={'/'}>
