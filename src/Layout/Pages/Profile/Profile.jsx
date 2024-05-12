@@ -87,7 +87,7 @@ const Profile = () => {
                     </Link>
                     {/* Privacy Policy */}
                     <div className="divider my-0 h-fit after:h-[1px] before:h-[1px]"></div>
-                    <Link to={'/settings'}>
+                    <Link to={'privacyPolicy'}>
                         <div className="flex items-center justify-between py-2">
                             <div className="flex items-center gap-3">
                                 <div><CiLock className="text-[26px] text-[#0165FC]" /></div>

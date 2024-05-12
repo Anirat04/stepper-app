@@ -45,88 +45,87 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: "/step1",
-        element: <StepOne></StepOne>,
-      },
-      {
-        path: "/step2",
-        element: <StepTwo></StepTwo>,
-      },
-      {
-        path: "/step3",
-        element: <StepThree></StepThree>,
-      },
-      {
-        path: "/login",
-        element: <Login></Login>,
-      },
-      {
-        path: "/signUp",
-        element: <SignUp></SignUp>,
-      },
-      {
-        path: "login/forgot-pass",
-        element: <ForgotPass></ForgotPass>,
-      },
-      {
-        path: "login/forgot-pass/verificationCode",
-        element: <VerificationCode></VerificationCode>,
-      },
-      {
-        path: "login/forgot-pass/verificationCode/resetPass",
-        element: <ResetPass></ResetPass>,
-      },
-      {
-        path: "/live-viewer",
-        element: <LiveViewer></LiveViewer>,
-      },
-      {
-        path: "doctor-details/:id",
-        element: <DoctorDetails></DoctorDetails>,
-        // loader: ({ params }) => params.id,
-      },
-      {
-        path: "bookings",
-        element: <Bookings></Bookings>,
-      },
-      {
-        path: "slp",
-        element: <SelectPackage></SelectPackage>,
-      },
-      {
-        path: "reApo",
-        element: <ReAppointment></ReAppointment>,
-      },
-      {
-        path: "cancApo",
-        element: <CancAppointment></CancAppointment>,
-      },
-      {
-        path: "chat",
-        element: <ChatCompo></ChatCompo>,
-      },
-      {
-        path: "vdo-con",
-        element: <VideoConsulting></VideoConsulting>,
-      },
-      {
-        path: "/vdo-con/doc-review",
-        element: <DoctorReview></DoctorReview>,
-      },
-      {
-        path: "terms",
-        element: <TermsConditions></TermsConditions>,
-      },
-      {
-        path: "privacyPolicy",
-        element: <PrivacyPolicy></PrivacyPolicy>,
-      },
-      {
         path: "profile",
         element: <Profile></Profile>,
       },
     ],
   },
+  //==============
+  {
+    path: "/step1",
+    element: <StepOne></StepOne>,
+  },
+  {
+    path: "/step2",
+    element: <StepTwo></StepTwo>,
+  },
+  {
+    path: "/step3",
+    element: <StepThree></StepThree>,
+  },
+  {
+    path: "/login",
+    element: <Login></Login>,
+  },
+  {
+    path: "/signUp",
+    element: <SignUp></SignUp>,
+  },
+  {
+    path: "login/forgot-pass",
+    element: <ForgotPass></ForgotPass>,
+  },
+  {
+    path: "login/forgot-pass/verificationCode",
+    element: <VerificationCode></VerificationCode>,
+  },
+  {
+    path: "login/forgot-pass/verificationCode/resetPass",
+    element: <ResetPass></ResetPass>,
+  },
+  {
+    path: "/live-viewer",
+    element: <LiveViewer></LiveViewer>,
+  },
+  {
+    path: "doctor-details/:id",
+    element: <DoctorDetails></DoctorDetails>,
+    // loader: ({ params }) => params.id,
+  },
+  {
+    path: "bookings",
+    element: <Bookings></Bookings>,
+  },
+  {
+    path: "slp",
+    element: <SelectPackage></SelectPackage>,
+  },
+  {
+    path: "reApo",
+    element: <ReAppointment></ReAppointment>,
+  },
+  {
+    path: "cancApo",
+    element: <CancAppointment></CancAppointment>,
+  },
+  {
+    path: "chat",
+    element: <ChatCompo></ChatCompo>,
+  },
+  {
+    path: "vdo-con",
+    element: <VideoConsulting></VideoConsulting>,
+  },
+  {
+    path: "/vdo-con/doc-review",
+    element: <DoctorReview></DoctorReview>,
+  },
+  {
+    path: "terms",
+    element: <TermsConditions></TermsConditions>,
+  },
+
+  //==============
   {
     path: "profile/your-profile",
     element: <YourProfile></YourProfile>,
@@ -142,6 +141,10 @@ const router = createBrowserRouter([
   {
     path: "profile/settings/password-manager",
     element: <PasswordManager></PasswordManager>,
+  },
+  {
+    path: "profile/privacyPolicy",
+    element: <PrivacyPolicy></PrivacyPolicy>,
   },
 ]);
 
