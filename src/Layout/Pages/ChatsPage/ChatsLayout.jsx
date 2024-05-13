@@ -1,11 +1,14 @@
-import React from 'react';
 import { BsArrowLeft } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { AvatarResponsiveBreakpoints } from '../../../components/ChatComponents/ChatAvatarSwiper/ChatAvatarSwiper';
 
 const ChatsLayout = () => {
+
+
     return (
-        <div className="pb-20">
-            <div className="pt-9 bg-[#0165FC]">
+        <div className="">
+            <div className="pt-9 h-svh bg-[#0165FC]">
                 <div className='px-5'>
                     <div className="text-center h-fit relative">
                         <p className="text-[18px] font-medium text-white">Chat</p>
@@ -38,8 +41,208 @@ const ChatsLayout = () => {
                     </div>
                 </div>
                 {/* Chats div */}
-                <div className='bg-white w-full min-h-svh rounded-3xl mt-7'>
-
+                <div className='bg-white w-full min-h-[80svh] rounded-3xl mt-7'>
+                    <div>
+                        <div className='py-6 pl-5'>
+                            <Swiper
+                                slidesPerView={3}
+                                spaceBetween={90}
+                                breakpoints={AvatarResponsiveBreakpoints}
+                                className="mySwiper"
+                            >
+                                <SwiperSlide>
+                                    <Link to={'/chats'}>
+                                        <div className='h-[54px] w-[54px]'>
+                                            <img className='h-full w-full rounded-full' src={'https://img.freepik.com/free-photo/pleased-young-female-doctor-wearing-medical-robe-stethoscope-around-neck-standing-with-closed-posture_409827-254.jpg'} alt="" />
+                                        </div>
+                                    </Link>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Link to={'/chats'}>
+                                        <div className='h-[54px] w-[54px]'>
+                                            <img className='h-full w-full rounded-full' src={'https://img.freepik.com/free-photo/smiling-doctor-with-strethoscope-isolated-grey_651396-974.jpg'} alt="" />
+                                        </div>
+                                    </Link>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Link to={'/chats'}>
+                                        <div className='h-[54px] w-[54px]'>
+                                            <img className='h-full w-full rounded-full' src={'https://img.freepik.com/free-photo/female-doctor-hospital-with-stethoscope_23-2148827776.jpg'} alt="" />
+                                        </div>
+                                    </Link>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Link to={'/chats'}>
+                                        <div className='h-[54px] w-[54px]'>
+                                            <img className='h-full w-full rounded-full' src={'https://img.freepik.com/premium-photo/beautiful-doctor-pointing-fingers_1258-16474.jpg?w=1380'} alt="" />
+                                        </div>
+                                    </Link>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Link to={'/chats'}>
+                                        <div className='h-[54px] w-[54px]'>
+                                            <img className='h-full w-full rounded-full' src={'https://img.freepik.com/free-photo/pleased-young-female-doctor-wearing-medical-robe-stethoscope-around-neck-standing-with-closed-posture_409827-254.jpg'} alt="" />
+                                        </div>
+                                    </Link>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Link to={'/chats'}>
+                                        <div className='h-[54px] w-[54px]'>
+                                            <img className='h-full w-full rounded-full' src={'https://img.freepik.com/free-photo/smiling-doctor-with-strethoscope-isolated-grey_651396-974.jpg'} alt="" />
+                                        </div>
+                                    </Link>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Link to={'/chats'}>
+                                        <div className='h-[54px] w-[54px]'>
+                                            <img className='h-full w-full rounded-full' src={'https://img.freepik.com/free-photo/female-doctor-hospital-with-stethoscope_23-2148827776.jpg'} alt="" />
+                                        </div>
+                                    </Link>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Link to={'/chats'}>
+                                        <div className='h-[54px] w-[54px]'>
+                                            <img className='h-full w-full rounded-full' src={'https://img.freepik.com/premium-photo/beautiful-doctor-pointing-fingers_1258-16474.jpg?w=1380'} alt="" />
+                                        </div>
+                                    </Link>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Link to={'/chats'}>
+                                        <div className='h-[54px] w-[54px]'>
+                                            <img className='h-full w-full rounded-full' src={'https://img.freepik.com/free-photo/pleased-young-female-doctor-wearing-medical-robe-stethoscope-around-neck-standing-with-closed-posture_409827-254.jpg'} alt="" />
+                                        </div>
+                                    </Link>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Link to={'/chats'}>
+                                        <div className='h-[54px] w-[54px]'>
+                                            <img className='h-full w-full rounded-full' src={'https://img.freepik.com/free-photo/smiling-doctor-with-strethoscope-isolated-grey_651396-974.jpg'} alt="" />
+                                        </div>
+                                    </Link>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Link to={'/chats'}>
+                                        <div className='h-[54px] w-[54px]'>
+                                            <img className='h-full w-full rounded-full' src={'https://img.freepik.com/free-photo/female-doctor-hospital-with-stethoscope_23-2148827776.jpg'} alt="" />
+                                        </div>
+                                    </Link>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Link to={'/chats'}>
+                                        <div className='h-[54px] w-[54px]'>
+                                            <img className='h-full w-full rounded-full' src={'https://img.freepik.com/premium-photo/beautiful-doctor-pointing-fingers_1258-16474.jpg?w=1380'} alt="" />
+                                        </div>
+                                    </Link>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Link to={'/chats'}>
+                                        <div className='h-[54px] w-[54px]'>
+                                            <img className='h-full w-full rounded-full' src={'https://img.freepik.com/free-photo/pleased-young-female-doctor-wearing-medical-robe-stethoscope-around-neck-standing-with-closed-posture_409827-254.jpg'} alt="" />
+                                        </div>
+                                    </Link>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Link to={'/chats'}>
+                                        <div className='h-[54px] w-[54px]'>
+                                            <img className='h-full w-full rounded-full' src={'https://img.freepik.com/free-photo/smiling-doctor-with-strethoscope-isolated-grey_651396-974.jpg'} alt="" />
+                                        </div>
+                                    </Link>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Link to={'/chats'}>
+                                        <div className='h-[54px] w-[54px]'>
+                                            <img className='h-full w-full rounded-full' src={'https://img.freepik.com/free-photo/female-doctor-hospital-with-stethoscope_23-2148827776.jpg'} alt="" />
+                                        </div>
+                                    </Link>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Link to={'/chats'}>
+                                        <div className='h-[54px] w-[54px]'>
+                                            <img className='h-full w-full rounded-full' src={'https://img.freepik.com/premium-photo/beautiful-doctor-pointing-fingers_1258-16474.jpg?w=1380'} alt="" />
+                                        </div>
+                                    </Link>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Link to={'/chats'}>
+                                        <div className='h-[54px] w-[54px]'>
+                                            <img className='h-full w-full rounded-full' src={'https://img.freepik.com/free-photo/pleased-young-female-doctor-wearing-medical-robe-stethoscope-around-neck-standing-with-closed-posture_409827-254.jpg'} alt="" />
+                                        </div>
+                                    </Link>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Link to={'/chats'}>
+                                        <div className='h-[54px] w-[54px]'>
+                                            <img className='h-full w-full rounded-full' src={'https://img.freepik.com/free-photo/smiling-doctor-with-strethoscope-isolated-grey_651396-974.jpg'} alt="" />
+                                        </div>
+                                    </Link>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Link to={'/chats'}>
+                                        <div className='h-[54px] w-[54px]'>
+                                            <img className='h-full w-full rounded-full' src={'https://img.freepik.com/free-photo/female-doctor-hospital-with-stethoscope_23-2148827776.jpg'} alt="" />
+                                        </div>
+                                    </Link>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Link to={'/chats'}>
+                                        <div className='h-[54px] w-[54px]'>
+                                            <img className='h-full w-full rounded-full' src={'https://img.freepik.com/premium-photo/beautiful-doctor-pointing-fingers_1258-16474.jpg?w=1380'} alt="" />
+                                        </div>
+                                    </Link>
+                                </SwiperSlide>
+                            </Swiper>
+                        </div>
+                        <div className='px-5 grid gap-3'>
+                            <div className='h-[60px] max-h-[60px] border rounded-md p-2 flex items-center gap-3 relative shadow-sm'>
+                                <div className='h-10 w-10 rounded-full'>
+                                    <img className='h-full w-full rounded-full' src="https://img.freepik.com/premium-photo/beautiful-doctor-pointing-fingers_1258-16474.jpg?w=1380" alt="" />
+                                </div>
+                                <div>
+                                    <h3 className='text-[14px] font-semibold'>Carla Schoen</h3>
+                                    <p className='text-[12px] text-[#868686]'>Perfect, will check it</p>
+                                </div>
+                                <div className='absolute top-2 right-2'>
+                                    <p className='text-[14px] text-[#868686]'>09:34 PM</p>
+                                </div>
+                            </div>
+                            <div className='h-[60px] max-h-[60px] border rounded-md p-2 flex items-center gap-3 relative shadow-sm'>
+                                <div className='h-10 w-10 rounded-full'>
+                                    <img className='h-full w-full rounded-full' src="https://img.freepik.com/premium-photo/beautiful-doctor-pointing-fingers_1258-16474.jpg?w=1380" alt="" />
+                                </div>
+                                <div>
+                                    <h3 className='text-[14px] font-semibold'>Carla Schoen</h3>
+                                    <p className='text-[12px] text-[#868686]'>Perfect, will check it</p>
+                                </div>
+                                <div className='absolute top-2 right-2'>
+                                    <p className='text-[14px] text-[#868686]'>09:34 PM</p>
+                                </div>
+                            </div>
+                            <div className='h-[60px] max-h-[60px] border rounded-md p-2 flex items-center gap-3 relative shadow-sm'>
+                                <div className='h-10 w-10 rounded-full'>
+                                    <img className='h-full w-full rounded-full' src="https://img.freepik.com/premium-photo/beautiful-doctor-pointing-fingers_1258-16474.jpg?w=1380" alt="" />
+                                </div>
+                                <div>
+                                    <h3 className='text-[14px] font-semibold'>Carla Schoen</h3>
+                                    <p className='text-[12px] text-[#868686]'>Perfect, will check it</p>
+                                </div>
+                                <div className='absolute top-2 right-2'>
+                                    <p className='text-[14px] text-[#868686]'>09:34 PM</p>
+                                </div>
+                            </div>
+                            <div className='h-[60px] max-h-[60px] border rounded-md p-2 flex items-center gap-3 relative shadow-sm'>
+                                <div className='h-10 w-10 rounded-full'>
+                                    <img className='h-full w-full rounded-full' src="https://img.freepik.com/premium-photo/beautiful-doctor-pointing-fingers_1258-16474.jpg?w=1380" alt="" />
+                                </div>
+                                <div>
+                                    <h3 className='text-[14px] font-semibold'>Carla Schoen</h3>
+                                    <p className='text-[12px] text-[#868686]'>Perfect, will check it</p>
+                                </div>
+                                <div className='absolute top-2 right-2'>
+                                    <p className='text-[14px] text-[#868686]'>09:34 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
