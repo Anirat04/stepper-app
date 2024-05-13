@@ -96,7 +96,7 @@ const BottomNav = () => {
     return (
         <>
             {/* Bottom nav */}
-            <div className="sticky w-full bottom-0 left-0 z-[999]">
+            <div className="fixed w-full bottom-0 left-0 z-[999]">
                 <div
                     className=" bg-white rounded-t-[15px] pb-5 pt-4 overflow-y-hidden"
                     style={{ boxShadow: "0px 1px 15px 0px #00000040" }}

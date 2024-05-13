@@ -34,6 +34,7 @@ import YourProfile from "./Layout/Pages/Profile/YourProfile/YourProfile.jsx";
 import Settings from "./Layout/Pages/Profile/Settings/Settings.jsx";
 import NotificationSettings from "./Layout/Pages/Profile/Settings/NotificationSettings/NotificationSettings.jsx";
 import PasswordManager from "./Layout/Pages/Profile/Settings/PasswordManager/PasswordManager.jsx";
+import ChatsLayout from "./Layout/Pages/ChatsPage/ChatsLayout.jsx";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,11 @@ const router = createBrowserRouter([
         path: "bookings",
         element: <Bookings></Bookings>,
       },
+      {
+        path: "chats",
+        element: <ChatsLayout></ChatsLayout>,
+      },
+
     ],
   },
   //==============

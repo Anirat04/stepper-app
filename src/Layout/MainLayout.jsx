@@ -9,7 +9,7 @@ const MainLayout = () => {
 
   return (
     <>
-      <div className="max-w-[600px]">
+      <div className="max-w-[600px] relative">
         <Outlet></Outlet>
         <BottomNav></BottomNav>
       </div>

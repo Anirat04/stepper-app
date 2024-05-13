@@ -59,7 +59,7 @@ const BookingTab = () => {
                                 </button>
                             </div>
                         </div>
-                        <div className='bg-white p-4 rounded-lg shadow-lg mb-3'>
+                        {/* <div className='bg-white p-4 rounded-lg shadow-lg mb-3'>
                             <div>
                                 <h3 className='font-bold text-[14px]'>Order ID: 58967895</h3>
                                 <p className='text-[11px] text-[#868686]'>Order Date: June 25, 2022, 10:00 PM - 03:00 PM</p>
@@ -98,7 +98,7 @@ const BookingTab = () => {
                                     View Details
                                 </button>
                             </div>
-                        </div>
+                        </div> */}
                     </TabPanel>
                     <TabPanel>
                         <div className='bg-white p-4 rounded-lg shadow-lg mb-3'>

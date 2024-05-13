@@ -80,7 +80,7 @@ const Home = () => {
     }
 
     return (
-        <div className="bg-[#fafafa] min-h-full relative w-full">
+        <div className="bg-[#fafafa] min-h-full relative w-full pb-20">
             <div className="fixed top-[60px]">
                 <img className="h-[516px] max-w-[375px]" src={HomeBG1} alt="" />
             </div>
