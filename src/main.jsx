@@ -36,6 +36,7 @@ import NotificationSettings from "./Layout/Pages/Profile/Settings/NotificationSe
 import PasswordManager from "./Layout/Pages/Profile/Settings/PasswordManager/PasswordManager.jsx";
 import ChatsLayout from "./Layout/Pages/ChatsPage/ChatsLayout.jsx";
 import PopularDoctorsList from "./Layout/Pages/PopularDoctorsList/PopularDoctorsList.jsx";
+import MyProfile from "./components/MyProfile/MyProfile.jsx";
 
 const router = createBrowserRouter([
   {
@@ -160,6 +161,10 @@ const router = createBrowserRouter([
   {
     path: "/popularDoctors",
     element: <PopularDoctorsList></PopularDoctorsList>,
+  },
+  {
+    path: "/myProfile",
+    element: <MyProfile></MyProfile>,
   },
 ]);
 
