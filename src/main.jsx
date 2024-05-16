@@ -35,6 +35,7 @@ import Settings from "./Layout/Pages/Profile/Settings/Settings.jsx";
 import NotificationSettings from "./Layout/Pages/Profile/Settings/NotificationSettings/NotificationSettings.jsx";
 import PasswordManager from "./Layout/Pages/Profile/Settings/PasswordManager/PasswordManager.jsx";
 import ChatsLayout from "./Layout/Pages/ChatsPage/ChatsLayout.jsx";
+import PopularDoctorsList from "./Layout/Pages/PopularDoctorsList/PopularDoctorsList.jsx";
 
 const router = createBrowserRouter([
   {
@@ -151,6 +152,14 @@ const router = createBrowserRouter([
   {
     path: "profile/privacyPolicy",
     element: <PrivacyPolicy></PrivacyPolicy>,
+  },
+
+
+
+
+  {
+    path: "/popularDoctors",
+    element: <PopularDoctorsList></PopularDoctorsList>,
   },
 ]);
 
