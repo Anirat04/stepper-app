@@ -38,6 +38,7 @@ import ChatsLayout from "./Layout/Pages/ChatsPage/ChatsLayout.jsx";
 import PopularDoctorsList from "./Layout/Pages/PopularDoctorsList/PopularDoctorsList.jsx";
 import MyProfile from "./components/MyProfile/MyProfile.jsx";
 import HelpAndSupport from "./Layout/Pages/HelpAndSupport/HelpAndSupport.jsx";
+import PaymentMethods from "./components/PaymentMethods/PaymentMethods.jsx";
 
 const router = createBrowserRouter([
   {
@@ -170,6 +171,10 @@ const router = createBrowserRouter([
   {
     path: "/hs",
     element: <HelpAndSupport></HelpAndSupport>,
+  },
+  {
+    path: "/pm",
+    element: <PaymentMethods></PaymentMethods>,
   },
 ]);
 

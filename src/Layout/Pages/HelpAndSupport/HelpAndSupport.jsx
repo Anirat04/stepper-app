@@ -1,5 +1,6 @@
 import React from 'react';
 import HeadingOne from '../../../components/Shared/CommonHeadings/HeadingOne/HeadingOne';
+import BottomPurpleButton from '../../../components/Shared/Buttons/BottomPurpleButton/BottomPurpleButton';
 const HelpAndSupport = () => {
     return (
         <div className='MainDiv'>
@@ -47,7 +48,7 @@ const HelpAndSupport = () => {
                     </div>
                     <div className="collapse-content">
                         <p className='pb-3'>Sorry! we are not able to recommend a solution. Please get in touch using the contact us option bellow.</p>
-                        <button className="btn btn-primary bg-[#7563f7] border-none w-full text-white">Contact Us</button>
+                        <BottomPurpleButton btnText={"Contact Us"}></BottomPurpleButton>
                     </div>
                 </div>
             </div>
