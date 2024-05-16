@@ -1,6 +1,7 @@
 import { BsArrowLeft } from "react-icons/bs";
 import { CiLock, CiUser } from "react-icons/ci";
 import { GrRotateRight } from "react-icons/gr";
+import { HiOutlineUsers } from "react-icons/hi2";
 import { LuCalendarDays } from "react-icons/lu";
 import { PiDotsThreeOutlineVertical } from "react-icons/pi";
 import { SlArrowRight } from "react-icons/sl";
@@ -91,7 +92,7 @@ const MyProfile = () => {
                             <div className="flex items-center justify-between py-4">
                                 <div className="flex items-center gap-4">
                                     <div className="bg-[#F8F7FF] p-[10px] rounded-xl">
-                                        <CiLock className="text-[24px] text-[#7563F7]" />
+                                        <HiOutlineUsers className="text-[24px] text-[#7563F7]" />
                                     </div>
                                     <div><p className=" font-medium">Invite Friends</p></div>
                                 </div>
