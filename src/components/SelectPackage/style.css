@@ -3,8 +3,9 @@
     -moz-appearance: none;
   } */
 
+/* TODO: have to  specify the radio */
 
-input[type="radio"] {
+/* input[type="radio"] {
   box-sizing: border-box;
   width: 20px;
   height: 20px;
@@ -29,4 +30,4 @@ input[type="radio"]:not(:disabled):checked {
     transparent 60%,
     transparent 100%
   );
-}
+} */

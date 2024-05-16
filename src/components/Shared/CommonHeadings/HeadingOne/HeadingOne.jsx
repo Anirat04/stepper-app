@@ -1,13 +1,11 @@
-import { Link } from "react-router-dom";
-import BookingTab from "../../../components/BookingComponents/BookingTab/BookingTab";
+import { Link } from 'react-router-dom';
 
-
-const Bookings = () => {
+const HeadingOne = ({ hText, linkTo }) => {
     return (
-        <div className="MainDiv pb-24">
+        <>
             <div className="absolute top-9 left-0 flex text-center w-full px-5">
                 <div>
-                    <Link to={'/'}>
+                    <Link to={linkTo}>
                         <svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect y="0.5" width="25" height="25" fill="url(#pattern0_149_75)" />
                             <defs>
@@ -21,14 +19,10 @@ const Bookings = () => {
                 </div>
             </div>
             <div className="text-center">
-                <h1 className="font-bold text-[20px]">My Bookings</h1>
+                <h1 className="font-bold text-[20px]">{hText}</h1>
             </div>
-            {/* Tab Components */}
-            <div>
-                <BookingTab></BookingTab>
-            </div>
-        </div>
+        </>
     );
 };
 
-export default Bookings;
+export default HeadingOne;

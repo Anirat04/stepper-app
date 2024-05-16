@@ -37,6 +37,7 @@ import PasswordManager from "./Layout/Pages/Profile/Settings/PasswordManager/Pas
 import ChatsLayout from "./Layout/Pages/ChatsPage/ChatsLayout.jsx";
 import PopularDoctorsList from "./Layout/Pages/PopularDoctorsList/PopularDoctorsList.jsx";
 import MyProfile from "./components/MyProfile/MyProfile.jsx";
+import HelpAndSupport from "./Layout/Pages/HelpAndSupport/HelpAndSupport.jsx";
 
 const router = createBrowserRouter([
   {
@@ -165,6 +166,10 @@ const router = createBrowserRouter([
   {
     path: "/myProfile",
     element: <MyProfile></MyProfile>,
+  },
+  {
+    path: "/hs",
+    element: <HelpAndSupport></HelpAndSupport>,
   },
 ]);
 
