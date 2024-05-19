@@ -22,12 +22,18 @@ const ChatCompo = () => {
         </div>
       </div>
 
+      {/* Chat divs */}
       <div className="flex flex-col gap-4 mt-6">
-        <div className="bg-[#f5f5f5] p-5 rounded-b-2xl rounded-tr-2xl rounded-tl-lg max-w-[80%]">
+        <div className="bg-[#f5f5f5] p-5 rounded-b-2xl rounded-tr-2xl rounded-tl-lg max-w-[80%] relative">
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
             tempore molestiae maiores cumque, veritatis ullam?
           </p>
+          <div className="flex items-center absolute right-5 bottom-3 gap-1">
+            <div>
+              <p className="text-[12px]">16:28</p>
+            </div>
+          </div>
         </div>
 
         <div className="bg-[#246bfd] text-white p-5 rounded-b-2xl rounded-tr-lg rounded-tl-2xl max-w-[80%] relative left-[20%]">
@@ -45,13 +51,19 @@ const ChatCompo = () => {
           </div>
         </div>
 
-        <div className="bg-[#f5f5f5] p-5 rounded-b-2xl rounded-tr-2xl rounded-tl-lg max-w-[80%]">
+        <div className="bg-[#f5f5f5] p-5 rounded-b-2xl rounded-tr-2xl rounded-tl-lg max-w-[80%] relative">
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
             tempore molestiae maiores cumque, veritatis ullam?
           </p>
+          <div className="flex items-center absolute right-5 bottom-3 gap-1">
+            <div>
+              <p className="text-[12px]">16:28</p>
+            </div>
+          </div>
         </div>
       </div>
+
       {/* message send box */}
       <div className="absolute w-full px-5 right-0 bottom-5">
         <div>
