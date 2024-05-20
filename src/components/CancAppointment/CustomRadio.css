@@ -1,0 +1,32 @@
+/* select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  } */
+
+/* TODO: have to  specify the radio */
+
+.cancApo-CustomRadio input[type="radio"] {
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    margin: 6px;
+    padding: 0;
+    border: 3px solid #246bfd;
+    border-radius: 50%;
+    appearance: none;
+    background-color: transparent;
+    outline: none;
+    display: inline-block;
+}
+
+.cancApo-CustomRadio input[type="radio"]:not(:disabled):checked {
+    border-color: #246bfd;
+    background-color: #246bfd;
+    background-clip: content-box;
+    padding: 1px;
+    background-image: radial-gradient(circle,
+            var(--radio-checked-color) 0%,
+            var(--radio-checked-color) 50%,
+            transparent 60%,
+            transparent 100%);
+}

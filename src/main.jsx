@@ -5,7 +5,6 @@ import "./index.css";
 import {
   createBrowserRouter,
   RouterProvider,
-  useNavigate,
 } from "react-router-dom";
 import StepOne from "./components/StepOne/StepOne.jsx";
 import StepTwo from "./components/StepTwo/StepTwo.jsx";
@@ -101,13 +100,13 @@ const router = createBrowserRouter([
     path: "/live-viewer",
     element: <LiveViewer></LiveViewer>,
   },
+  // Doctor Details routes starts here
   {
     path: "doctor-details/:id",
     element: <DoctorDetails></DoctorDetails>,
-    // loader: ({ params }) => params.id,
   },
   {
-    path: "slp",
+    path: "doctor-details/:id/select-package",
     element: <SelectPackage></SelectPackage>,
   },
   {
@@ -115,7 +114,7 @@ const router = createBrowserRouter([
     element: <ReAppointment></ReAppointment>,
   },
   {
-    path: "cancApo",
+    path: "cancel-appointment",
     element: <CancAppointment></CancAppointment>,
   },
   {
