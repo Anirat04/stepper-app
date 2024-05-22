@@ -17,7 +17,7 @@ const SignUp = () => {
     const handleUserOnchange = (event) => {
         setHasTextUser(event.target.value !== '');
     };
-    const hnadleEmailOnChange = (event) => {
+    const handleEmailOnChange = (event) => {
         setHasTextEmail(event.target.value !== '');
     };
     const handlePassOnChange = (event) => {
@@ -97,7 +97,7 @@ const SignUp = () => {
                                     type="email"
                                     placeholder="Enter your email"
                                     {...register("email")}
-                                    onChange={hnadleEmailOnChange}
+                                    onChange={handleEmailOnChange}
                                     className={`bg-white border w-full py-3 rounded-lg pl-12 outline-0 focus:border-[#7563f7] ${hasTextEmail ? 'border-[#7563f7]' : ''} text-black`}
                                 />
                                 <span className='absolute left-4 top-1/2 -translate-y-1/2'>

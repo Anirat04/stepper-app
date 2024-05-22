@@ -21,7 +21,7 @@ const Home = () => {
     const FeatureDoctorsData = sessionData?.FeatureDoctors
     const navigate = useNavigate()
     const [loading, setLoading] = useState(true);
-    console.log(loading);
+    // console.log(loading);
     const {
         register,
         handleSubmit,
@@ -38,6 +38,14 @@ const Home = () => {
     const getSessionData = useCallback(async () => {
         const getSessionId = user?.sessionid
         try {
+            const sessionDataFromStorage = JSON.parse(localStorage.getItem('sessionData'));
+            if (sessionDataFromStorage) {
+                setSessionData(sessionDataFromStorage);
+                setLoading(false);
+                return;
+            }
+
+
             const sessionResponse = await fetch(
                 "https://api-doctors24.duckdns.org/accounts/dashboard",
                 {
@@ -51,13 +59,16 @@ const Home = () => {
             );
             const sessionResponseData = await sessionResponse.json();
 
-            
+
             if (sessionResponseData.status === 200) {
                 setSessionData(sessionResponseData.data);
+                localStorage.setItem('sessionData', JSON.stringify(sessionResponseData.data));
                 console.log(sessionResponseData);
                 setLoading(false)
+            } else {
+                setLoading(true)
             }
-            
+
             if (sessionResponseData.status !== 200) {
                 setLoading(true)
             }
@@ -73,9 +84,10 @@ const Home = () => {
     useEffect(() => {
         getSessionData();
     }, [getSessionData]);
+    console.log(sessionData);
     // Code for getting session data ends here
 
-    if(loading === true && sessionData === null){
+    if (loading === true && sessionData === null) {
         return <Loader></Loader>
     }
 

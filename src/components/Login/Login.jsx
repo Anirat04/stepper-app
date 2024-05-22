@@ -15,7 +15,7 @@ const Login = () => {
     const [hasTextPass, setHasTextPass] = useState(false);
     const navigate = useNavigate()
 
-    const hnadleEmailOnChange = (event) => {
+    const handleEmailOnChange = (event) => {
         setHasTextEmail(event.target.value !== '');
     };
     const handlePassOnChange = (event) => {
@@ -45,10 +45,41 @@ const Login = () => {
                 email: data.email,
                 sessionid: responseData.sessionid,
             }
-
+            // Save userData to local storage
             if (response.status === 200) {
                 console.log('userData saved to local storage');
                 localStorage.setItem('userData', JSON.stringify(userData));
+                // localStorage.setItem('userData', JSON.stringify(userData));
+                // navigate('/')
+                if (responseData.status !== 200) {
+                    localStorage.setItem('userData', JSON.stringify({
+                        email: null,
+                        sessionid: null,
+                    }));
+                    localStorage.setItem('sessionData', JSON.stringify(null));
+                }
+            }
+            console.log(responseData);
+            // Fetch session data
+            const sessionResponse = await fetch("https://api-doctors24.duckdns.org/accounts/dashboard", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${responseData.sessionid}`,
+                },
+                body: JSON.stringify({ email: data.email }),
+            });
+
+            const sessionResponseData = await sessionResponse.json();
+            if (sessionResponseData.status !== 200) {
+                throw new Error('Failed to fetch session data');
+            }
+            // Save session data to local storage
+            localStorage.setItem('sessionData', JSON.stringify(sessionResponseData.data));
+
+            if (response.status === 200) {
+                // console.log('userData saved to local storage');
+                // localStorage.setItem('userData', JSON.stringify(userData));
                 navigate('/')
             }
 
@@ -84,7 +115,7 @@ const Login = () => {
                                     type="email"
                                     placeholder="Enter your email"
                                     {...register("email")}
-                                    onChange={hnadleEmailOnChange}
+                                    onChange={handleEmailOnChange}
                                     className={`bg-white border w-full py-3 rounded-lg pl-12 outline-0 focus:border-[#7563f7] ${hasTextEmail ? 'border-[#7563f7]' : ''} text-black`}
                                 />
                                 <span className='absolute left-4 top-1/2 -translate-y-1/2'>
