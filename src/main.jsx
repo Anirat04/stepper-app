@@ -114,7 +114,7 @@ const router = createBrowserRouter([
     element: <ReAppointment></ReAppointment>,
   },
   {
-    path: "cancel-appointment",
+    path: "bookings/cancel-appointment/:id",
     element: <CancAppointment></CancAppointment>,
   },
   {

@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import avatarImg from '../../../assets/images/DoctorDetails/doctor-details-1.png'
 
 const BookingTabCard = ({ item }) => {
@@ -43,9 +44,11 @@ const BookingTabCard = ({ item }) => {
                 </div>
             </div>
             <div className='grid grid-cols-2 gap-3'>
-                <button className="h-10 bg-[#f3f3f3] border-none text-black font-normal text-[13px] rounded-lg">
-                    Cancel
-                </button>
+                <Link to={`cancel-appointment/${booking_id}`}>
+                    <button className="h-10 bg-[#f3f3f3] border-none text-black font-normal text-[13px] rounded-lg w-full">
+                        Cancel
+                    </button>
+                </Link>
                 <button className="h-10 bg-[#7563f7] border-none text-white font-light text-[13px] rounded-lg">
                     View Details
                 </button>

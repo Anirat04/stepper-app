@@ -12,10 +12,10 @@ const BookingTab = ({ bookingData }) => {
             <div className="px-5 pt-8 font-rubik">
                 <Tabs>
                     <TabList className="bg-[#f3f3f3] flex h-[32px] p-[3px] rounded-md mb-8">
-                        <Tab className="flex w-1/2 justify-center items-center text-[14px] outline-0">
+                        <Tab className="flex w-1/2 justify-center items-center text-[14px] outline-0 cursor-pointer">
                             Upcoming
                         </Tab>
-                        <Tab className="flex w-1/2 justify-center items-center text-[14px] outline-0">
+                        <Tab className="flex w-1/2 justify-center items-center text-[14px] outline-0 cursor-pointer">
                             Past
                         </Tab>
                     </TabList>

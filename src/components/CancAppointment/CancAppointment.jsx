@@ -4,11 +4,13 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link, useParams } from "react-router-dom";
 
 const CancAppointment = () => {
   const [showOtherReasonTextarea, setShowOtherReasonTextarea] = useState(false);
   const [selectedReason, setSelectedReason] = useState('')
   const { user } = useContext(AuthContext)
+  const params = useParams()
 
   const handleRadioChange = (e) => {
     // console.log(e.target.value);
@@ -29,7 +31,7 @@ const CancAppointment = () => {
     event.preventDefault()
     const cancelData = {
       email: user?.email,
-      bookingID: "APTL17I6",
+      bookingID: params?.id,
       cancelReason: selectedReason
     }
     console.log(cancelData);
@@ -68,24 +70,28 @@ const CancAppointment = () => {
     // onChange={handleRadioChange}
     >
       <div className="bg-white h-svh pt-9 px-5 font-rubik flex flex-col justify-between">
-        <ToastContainer
-          position="top-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="light"
-        // transition:Bounce
-        />
-        <ToastContainer />
+        <div className="absolute">
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          // transition:Bounce
+          />
+          <ToastContainer />
+        </div>
         <div>
           <div className="flex items-center gap-4">
             <div>
-              <IoMdArrowBack className="text-[22px]" />
+              <Link to={'/bookings'}>
+                <IoMdArrowBack className="text-[22px]" />
+              </Link>
             </div>
             <div>
               <h1 className="text-[20px] font-bold">Cancel Appointment</h1>
