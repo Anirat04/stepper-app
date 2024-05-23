@@ -24,7 +24,11 @@ const Login = () => {
 
 
     // Form operations
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const {
+        register,
+        handleSubmit,
+        // formState: { errors }
+    } = useForm();
     const onSubmit = async (data) => {
         try {
             const response = await fetch('https://api-doctors24.duckdns.org/sign-in', {
