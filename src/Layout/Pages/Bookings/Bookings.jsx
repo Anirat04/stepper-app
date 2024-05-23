@@ -1,8 +1,37 @@
 import { Link } from "react-router-dom";
 import BookingTab from "../../../components/BookingComponents/BookingTab/BookingTab";
+import { useEffect, useState } from "react";
 
 
 const Bookings = () => {
+    const [bookingData, setBookingData] = useState()
+
+    useEffect(() => {
+        const userData = JSON.parse(localStorage.getItem('userData'))
+        console.log(userData.sessionid);
+        const fetchData = async () => {
+            try {
+                const response = await fetch('https://api-doctors24.duckdns.org/accounts/bookings', {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${userData?.sessionid}`
+                    },
+                    body: JSON.stringify({ email: userData?.email })
+                })
+                // console.log(response);
+                const responseData = await response.json()
+                if (responseData.status === 200) {
+                    setBookingData(responseData?.data)
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        fetchData()
+    }, [])
+
+    console.log(bookingData);
     return (
         <div className="MainDiv pb-24">
             <div className="absolute top-9 left-0 flex text-center w-full px-5">
@@ -25,7 +54,7 @@ const Bookings = () => {
             </div>
             {/* Tab Components */}
             <div>
-                <BookingTab></BookingTab>
+                <BookingTab bookingData={bookingData}></BookingTab>
             </div>
         </div>
     );
