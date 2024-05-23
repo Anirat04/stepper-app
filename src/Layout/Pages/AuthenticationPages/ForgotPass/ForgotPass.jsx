@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { IoMailOutline } from "react-icons/io5";
-import forgotPassImg from "../../assets/images/Forgot-Pass-image.png"
+import forgotPassImg from "../../../../assets/images/Forgot-Pass-image.png"
 import { Link } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 

@@ -9,7 +9,7 @@ import HomeBG2 from "../../../assets/images/Home-bg/Ellipse 143.png"
 import { useNavigate } from "react-router-dom";
 import { useCallback, useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
-import Loader from "../../../components/Loader/Loader";
+import Loader from "../../../components/Shared/Loader/Loader";
 
 // TODO: Homepage Background color effect should be applied **Properly**
 // TODO: Homepage NavBar must be in separate component

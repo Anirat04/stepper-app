@@ -5,7 +5,7 @@ const StepTwo = () => {
     return (
         <div className="bg-[#f8f7ff] h-full">
             <div className="">
-                <img className="w-full" src="https://i.ibb.co/GP0mrLh/uiux-design-Figma-1-removebg-preview.png" alt="" />
+                <img className="w-full" src="https://i.ibb.co/GP0mrLh/uiux-design-Figma-1-removebg-preview.png" alt="Step2 image" />
             </div>
             <div className="w-full pb-[44px] bg-white rounded-t-[30px]">
                 <div className="text-center pt-[30px] px-5">

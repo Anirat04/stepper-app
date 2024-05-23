@@ -3,8 +3,8 @@ import { useForm } from 'react-hook-form';
 import { CiLock } from "react-icons/ci";
 import { PiEyeLight } from 'react-icons/pi';
 import { PiEyeSlashThin } from "react-icons/pi";
-import newPassImage from '../../assets/images/NewPass-Image.png'
-import congoImage from '../../assets/images/CongoModal-Image.png'
+import newPassImage from '../../../../assets/images/NewPass-Image.png'
+import congoImage from '../../../../assets/images/CongoModal-Image.png'
 import { Link } from 'react-router-dom';
 import { IoIosArrowBack } from 'react-icons/io';
 

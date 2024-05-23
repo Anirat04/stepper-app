@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
-import VerificationImage from "../../assets/images/CodeVerification-Image.png"
+import VerificationImage from "../../../../assets/images/CodeVerification-Image.png"
 import { Link, useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 

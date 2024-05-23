@@ -1,22 +1,20 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { CiLock, CiUser } from 'react-icons/ci';
-import { IoLogoApple, IoMailOutline } from 'react-icons/io5';
-import { PiEyeLight, PiEyeSlashThin } from 'react-icons/pi';
-import { Link } from 'react-router-dom';
-import logo from '../../assets/images/weCare-logo.png'
-import GoogleLogo from '../../assets/images/Google-logo.png'
-import { IoIosArrowBack } from "react-icons/io";
+import { CiLock } from "react-icons/ci";
+import { PiEyeLight } from 'react-icons/pi';
+import { PiEyeSlashThin } from "react-icons/pi";
+import { Link, useNavigate } from 'react-router-dom';
+import logo from '../../../../assets/images/weCare-logo.png'
+import GoogleLogo from '../../../../assets/images/Google-logo.png'
+import { IoLogoApple, IoMailOutline } from "react-icons/io5";
 
-const SignUp = () => {
+
+const Login = () => {
     const [openEye, setOpenEye] = useState(false)
-    const [hasTextUser, setHasTextUser] = useState(false);
     const [hasTextEmail, setHasTextEmail] = useState(false);
     const [hasTextPass, setHasTextPass] = useState(false);
+    const navigate = useNavigate()
 
-    const handleUserOnchange = (event) => {
-        setHasTextUser(event.target.value !== '');
-    };
     const handleEmailOnChange = (event) => {
         setHasTextEmail(event.target.value !== '');
     };
@@ -24,73 +22,97 @@ const SignUp = () => {
         setHasTextPass(event.target.value !== '');
     };
 
+
     // Form operations
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const {
+        register,
+        handleSubmit,
+        // formState: { errors }
+    } = useForm();
     const onSubmit = async (data) => {
         try {
-            const response = await fetch('https://api-doctors24.duckdns.org/create-account', {
+            const response = await fetch('https://api-doctors24.duckdns.org/sign-in', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(data)
+                body: JSON.stringify(data),
             });
-
-            if (!response.ok) {
-                throw new Error('Failed to create account');
+            if (!response.status === 200) {
+                throw new Error('Failed to log in')
             }
 
-            const responseData = await response.json();
+            const responseData = await response.json()
             console.log(responseData);
 
+            const userData = {
+                email: data.email,
+                sessionid: responseData.sessionid,
+            }
+            // Save userData to local storage
+            if (response.status === 200) {
+                console.log('userData saved to local storage');
+                localStorage.setItem('userData', JSON.stringify(userData));
+                // localStorage.setItem('userData', JSON.stringify(userData));
+                // navigate('/')
+                if (responseData.status !== 200) {
+                    localStorage.setItem('userData', JSON.stringify({
+                        email: null,
+                        sessionid: null,
+                    }));
+                    localStorage.setItem('sessionData', JSON.stringify(null));
+                }
+            }
+            console.log(responseData);
+            // Fetch session data
+            const sessionResponse = await fetch("https://api-doctors24.duckdns.org/accounts/dashboard", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${responseData.sessionid}`,
+                },
+                body: JSON.stringify({ email: data.email }),
+            });
+
+            const sessionResponseData = await sessionResponse.json();
+            if (sessionResponseData.status !== 200) {
+                throw new Error('Failed to fetch session data');
+            }
+            // Save session data to local storage
+            localStorage.setItem('sessionData', JSON.stringify(sessionResponseData.data));
+
+            if (response.status === 200) {
+                // console.log('userData saved to local storage');
+                // localStorage.setItem('userData', JSON.stringify(userData));
+                navigate('/')
+            }
+
         } catch (error) {
-            console.error('Error:', error);
+            console.log('Error:', error);
         }
-    };
+    }
 
     // Handle the form password hide/show events
     const handleOpenEye = () => {
         setOpenEye(!openEye)
     }
 
-
-
     return (
         <div className='bg-white h-full'>
             <div className='px-5 pt-[40px]'>
-                <div>
-                    <Link to={"/login"}>
-                        <IoIosArrowBack className='text-black text-[24px] absolute' />
-                    </Link>
-                </div>
                 {/* Logo and header text */}
                 <div className='flex justify-center'>
                     <img src={logo} alt="" />
                 </div>
                 <div className='text-center'>
-                    <h2 className='text-black text-[26px] font-bold mb-2' >Create an Account</h2>
-                    <p className='text-[14px]'>Please fill this details to create an account</p>
+                    <h2 className='text-black text-[26px] font-bold mb-2' >Welcome Back!</h2>
+                    <p className='text-[14px]'>Use Credentials to access your account</p>
                 </div>
 
-                {/* Sign Up Form */}
+                {/* Login Form */}
                 <div>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className='my-8'>
-                            {/* Name */}
-                            <div className='relative mb-5 group'>
-                                <input
-                                    type="text"
-                                    placeholder="Enter your name"
-                                    {...register("name")}
-                                    onChange={handleUserOnchange}
-                                    className={`bg-white border w-full py-3 rounded-lg pl-12 outline-0 focus:border-[#7563f7] ${hasTextUser ? 'border-[#7563f7]' : ''} text-black`}
-                                />
-                                <span className='absolute left-4 top-1/2 -translate-y-1/2'>
-                                    <CiUser
-                                        className={`text-[22px] group-focus-within:text-[#7563f7] ${hasTextUser ? 'text-[#7563f7]' : ''}`}
-                                    />
-                                </span>
-                            </div>
                             {/* Email */}
                             <div className='relative mb-5 group'>
                                 <input
@@ -104,7 +126,6 @@ const SignUp = () => {
                                     <IoMailOutline className={`text-[22px] group-focus-within:text-[#7563f7] ${hasTextEmail ? 'text-[#7563f7]' : ''}`} />
                                 </span>
                             </div>
-
                             {/* Password */}
                             <div className="relative group">
                                 <input
@@ -130,9 +151,12 @@ const SignUp = () => {
                                     }
                                 </span>
                             </div>
+                            <div className='text-right  mt-2'>
+                                <Link to={'forgot-pass'} className='text-[#7563f7]'>Forgot Password?</Link>
+                            </div>
                         </div>
                         <button className="btn btn-primary bg-[#7563f7] border-none w-full text-white font-normal">
-                            <input className='w-full h-full' type="submit" value={'Sign Up'} />
+                            <input className='w-full h-full' type="submit" value={'Log In'} />
                         </button>
                     </form>
                 </div>
@@ -156,8 +180,8 @@ const SignUp = () => {
                     </div>
                 </div>
                 <div className='text-center'>
-                    <div className='mt-[42px]'>
-                        <p className='text-black text-[14px] font-medium'>Already have an account? <Link to={'/login'} className='text-[#7563f7]'>Log in</Link></p>
+                    <div className='mt-[80px]'>
+                        <p className='text-black text-[14px] font-medium'>Don&apos;t have an account? <Link to={'/signUp'} className='text-[#7563f7]'>Sign up</Link></p>
                     </div>
                 </div>
             </div>
@@ -165,4 +189,4 @@ const SignUp = () => {
     );
 };
 
-export default SignUp;
+export default Login;

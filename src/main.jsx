@@ -6,14 +6,14 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import StepOne from "./components/StepOne/StepOne.jsx";
-import StepTwo from "./components/StepTwo/StepTwo.jsx";
-import StepThree from "./components/StepThree/StepThree.jsx";
-import Login from "./components/Login/Login.jsx";
-import SignUp from "./components/SignUp/SignUp.jsx";
-import ForgotPass from "./components/ForgotPass/ForgotPass.jsx";
-import VerificationCode from "./components/VerificationCode/VerificationCode.jsx";
-import ResetPass from "./components/ResetPass/ResetPass.jsx";
+import StepOne from "./Layout/Pages/GettingStartSteppers/StepOne/StepOne.jsx";
+import StepTwo from "./Layout/Pages/GettingStartSteppers/StepTwo/StepTwo.jsx";
+import StepThree from "./Layout/Pages/GettingStartSteppers/StepThree/StepThree.jsx";
+import Login from "./Layout/Pages/AuthenticationPages/Login/Login.jsx";
+import SignUp from "./Layout/Pages/AuthenticationPages/SignUp/SignUp.jsx";
+import ForgotPass from "./Layout/Pages/AuthenticationPages/ForgotPass/ForgotPass.jsx";
+import VerificationCode from "./Layout/Pages/AuthenticationPages/VerificationCode/VerificationCode.jsx";
+import ResetPass from "./Layout/Pages/AuthenticationPages/ResetPass/ResetPass.jsx";
 import MainLayout from "./Layout/MainLayout.jsx";
 import Home from "./Layout/Pages/Home/Home.jsx";
 import LiveViewer from "./Layout/Pages/LiveViewer/LiveViewer.jsx";
@@ -22,7 +22,7 @@ import DoctorDetails from "./Layout/Pages/DoctorDetails/DoctorDetails.jsx";
 import Bookings from "./Layout/Pages/Bookings/Bookings.jsx";
 import SelectPackage from "./components/SelectPackage/SelectPackage.jsx";
 import ReAppointment from "./components/ReAppointment/ReAppointment.jsx";
-import CancAppointment from "./components/CancAppointment/CancAppointment.jsx";
+import CancAppointment from "./Layout/Pages/Bookings/CancAppointment/CancAppointment.jsx";
 import ChatCompo from "./components/ChatCompo/ChatCompo.jsx";
 import VideoConsulting from "./Layout/Pages/VideoConsulting/VideoConsulting.jsx";
 import DoctorReview from "./Layout/Pages/DoctorReview/DoctorReview.jsx";
