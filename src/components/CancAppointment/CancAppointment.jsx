@@ -1,11 +1,14 @@
 import { IoMdArrowBack } from "react-icons/io";
 import './CustomRadio.css'
-import { useEffect, useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const CancAppointment = () => {
   const [showOtherReasonTextarea, setShowOtherReasonTextarea] = useState(false);
   const [selectedReason, setSelectedReason] = useState('')
-  const [cancelReason, setCancelReason] = useState('')
+  const { user } = useContext(AuthContext)
 
   const handleRadioChange = (e) => {
     // console.log(e.target.value);
@@ -21,18 +24,64 @@ const CancAppointment = () => {
     }
   };
 
+
   const handleFormSubmit = async (event) => {
     event.preventDefault()
-    setCancelReason(selectedReason)
-  }
+    const cancelData = {
+      email: user?.email,
+      bookingID: "APTL17I6",
+      cancelReason: selectedReason
+    }
+    console.log(cancelData);
+    try {
+      const postCancelReason = await fetch('https://api-doctors24.duckdns.org/accounts/cancel-appoinment', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${user?.sessionid}`
+        },
+        body: JSON.stringify(cancelData)
+      })
 
-  // console.log(cancelReason);
+      const response = await postCancelReason.json()
+      if (response.status === 200) {
+        toast.success('Booking cancel successful!!', {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          // transition: Bounce,
+        });
+      }
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  }
   return (
     <form
       onSubmit={handleFormSubmit}
     // onChange={handleRadioChange}
     >
       <div className="bg-white h-svh pt-9 px-5 font-rubik flex flex-col justify-between">
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        // transition:Bounce
+        />
+        <ToastContainer />
         <div>
           <div className="flex items-center gap-4">
             <div>
