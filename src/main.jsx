@@ -50,7 +50,8 @@ const router = createBrowserRouter([
       },
       {
         path: "profile",
-        element: <Profile></Profile>,
+        // element: <Profile></Profile>,
+        element: <MyProfile></MyProfile>,
       },
       {
         path: "bookings",
