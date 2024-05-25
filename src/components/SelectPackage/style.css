@@ -5,7 +5,7 @@
 
 /* TODO: have to  specify the radio */
 
-/* input[type="radio"] {
+.custom-select-package-radio input[type="radio"] {
   box-sizing: border-box;
   width: 20px;
   height: 20px;
@@ -18,16 +18,14 @@
   outline: none;
 }
 
-input[type="radio"]:not(:disabled):checked {
+.custom-select-package-radio input[type="radio"]:not(:disabled):checked {
   border-color: #246bfd;
   background-color: #246bfd;
   background-clip: content-box;
   padding: 1px;
-  background-image: radial-gradient(
-    circle,
-    var(--radio-checked-color) 0%,
-    var(--radio-checked-color) 50%,
-    transparent 60%,
-    transparent 100%
-  );
-} */
+  background-image: radial-gradient(circle,
+      var(--radio-checked-color) 0%,
+      var(--radio-checked-color) 50%,
+      transparent 60%,
+      transparent 100%);
+}
