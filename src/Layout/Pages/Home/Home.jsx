@@ -39,7 +39,7 @@ const Home = () => {
         const getSessionId = user?.sessionid
         try {
             const sessionDataFromStorage = JSON.parse(localStorage.getItem('sessionData'));
-            if (loading === true) {
+            if (loading === true && sessionDataFromStorage) {
                 setSessionData(sessionDataFromStorage);
                 setLoading(false);
                 return;
@@ -68,9 +68,18 @@ const Home = () => {
                 setLoading(true)
             }
 
-            if (sessionResponseData.status !== 200) {
-                setLoading(true)
+            if (sessionResponseData.status === "401") {
+                navigate('/login')
             }
+            if (sessionResponseData.status === "406" && sessionDataFromStorage === null) {
+                navigate('/login')
+                console.log(sessionDataFromStorage);
+            }
+
+            // if (sessionResponseData.status !== 200) {
+            //     setLoading(true)
+            // }
+            console.log(sessionResponseData);
         } catch (error) {
             navigate('/login')
             console.error("Error fetching session data:", error);
