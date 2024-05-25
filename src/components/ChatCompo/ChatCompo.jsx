@@ -20,7 +20,7 @@ const ChatCompo = () => {
   }, [value]);
 
   return (
-    <div className="min-h-svh pt-9 px-5 font-rubik relative">
+    <div className="max-h-svh pt-9 px-5 font-rubik relative">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
           <div>
@@ -37,7 +37,45 @@ const ChatCompo = () => {
       </div>
 
       {/* Chat divs */}
-      <div className="flex flex-col gap-4 mt-6">
+      <div className="flex flex-col gap-4 pt-5 max-h-[76vh] overflow-y-auto">
+        <div className="bg-[#f5f5f5] p-5 rounded-b-2xl rounded-tr-2xl rounded-tl-lg max-w-[80%] relative">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
+            tempore molestiae maiores cumque, veritatis ullam?
+          </p>
+          <div className="flex items-center absolute right-5 bottom-3 gap-1">
+            <div>
+              <p className="text-[12px]">16:28</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-[#246bfd] text-white p-5 rounded-b-2xl rounded-tr-lg rounded-tl-2xl max-w-[80%] relative left-[20%]">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
+            tempore molestiae maiores cumque, veritatis ullam?
+          </p>
+          <div className="flex items-center absolute right-5 bottom-3 gap-1">
+            <div>
+              <p className="text-[12px]">16:29</p>
+            </div>
+            <div>
+              <IoCheckmarkDoneOutline />
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-[#f5f5f5] p-5 rounded-b-2xl rounded-tr-2xl rounded-tl-lg max-w-[80%] relative">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
+            tempore molestiae maiores cumque, veritatis ullam?
+          </p>
+          <div className="flex items-center absolute right-5 bottom-3 gap-1">
+            <div>
+              <p className="text-[12px]">16:28</p>
+            </div>
+          </div>
+        </div>
         <div className="bg-[#f5f5f5] p-5 rounded-b-2xl rounded-tr-2xl rounded-tl-lg max-w-[80%] relative">
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
@@ -79,7 +117,7 @@ const ChatCompo = () => {
       </div>
 
       {/* message send box */}
-      <div className="absolute w-full px-5 right-0 bottom-5">
+      <div className="relative w-full px-5 right-0 pt-5 pb-3">
         <div>
           <form
           // onSubmit={handleSubmit(onSubmit)}
@@ -93,7 +131,7 @@ const ChatCompo = () => {
                   rows={1}
                   value={value}
                   placeholder='Type something'
-                  className='textareaScroll w-full outline-0 rounded-[10px] pl-[60px] py-3'
+                  className='textareaScroll w-full outline-0 rounded-[10px] pl-[60px] py-3 max-h-[5lh]'
                   style={{
                     "boxShadow": "0px 4px 10px -2px rgba(0,0,0,0.1)"
                   }}
