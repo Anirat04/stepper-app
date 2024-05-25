@@ -14,13 +14,13 @@ const ChatCompo = () => {
 
   useEffect(() => {
     if (textAreaRef) {
-      textAreaRef.current.style.height = "auto"
+      textAreaRef.current.style.height = "50px"
       textAreaRef.current.style.height = textAreaRef.current.scrollHeight + "px"
     }
   }, [value]);
 
   return (
-    <div className="max-h-svh px-5 font-rubik relative overflow-auto">
+    <div className="max-h-svh px-5 font-rubik relative overflow-hidden">
       <div className="flex items-center justify-between h-[8svh] pt-5">
         <div className="flex items-center gap-4">
           <div>
@@ -37,87 +37,88 @@ const ChatCompo = () => {
       </div>
 
       {/* Chat divs */}
-      <div className="flex flex-col gap-4 pt-5 overflow-y-auto max-h-[81svh]">
-        <div className="bg-[#f5f5f5] p-5 rounded-b-2xl rounded-tr-2xl rounded-tl-lg max-w-[80%] relative">
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
-            tempore molestiae maiores cumque, veritatis ullam?
-          </p>
-          <div className="flex items-center absolute right-5 bottom-3 gap-1">
-            <div>
-              <p className="text-[12px]">16:28</p>
+      <div className="relative overflow-y-auto max-h-[92svh] pb-20">
+        <div className="flex flex-col gap-4 pt-5">
+          <div className="bg-[#f5f5f5] p-5 rounded-b-2xl rounded-tr-2xl rounded-tl-lg max-w-[80%] relative">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
+              tempore molestiae maiores cumque, veritatis ullam?
+            </p>
+            <div className="flex items-center absolute right-5 bottom-3 gap-1">
+              <div>
+                <p className="text-[12px]">16:28</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="bg-[#246bfd] text-white p-5 rounded-b-2xl rounded-tr-lg rounded-tl-2xl max-w-[80%] relative left-[20%]">
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
-            tempore molestiae maiores cumque, veritatis ullam?
-          </p>
-          <div className="flex items-center absolute right-5 bottom-3 gap-1">
-            <div>
-              <p className="text-[12px]">16:29</p>
-            </div>
-            <div>
-              <IoCheckmarkDoneOutline />
+          <div className="bg-[#246bfd] text-white p-5 rounded-b-2xl rounded-tr-lg rounded-tl-2xl max-w-[80%] relative left-[20%]">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
+              tempore molestiae maiores cumque, veritatis ullam?
+            </p>
+            <div className="flex items-center absolute right-5 bottom-3 gap-1">
+              <div>
+                <p className="text-[12px]">16:29</p>
+              </div>
+              <div>
+                <IoCheckmarkDoneOutline />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="bg-[#f5f5f5] p-5 rounded-b-2xl rounded-tr-2xl rounded-tl-lg max-w-[80%] relative">
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
-            tempore molestiae maiores cumque, veritatis ullam?
-          </p>
-          <div className="flex items-center absolute right-5 bottom-3 gap-1">
-            <div>
-              <p className="text-[12px]">16:28</p>
+          <div className="bg-[#f5f5f5] p-5 rounded-b-2xl rounded-tr-2xl rounded-tl-lg max-w-[80%] relative">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
+              tempore molestiae maiores cumque, veritatis ullam?
+            </p>
+            <div className="flex items-center absolute right-5 bottom-3 gap-1">
+              <div>
+                <p className="text-[12px]">16:28</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="bg-[#f5f5f5] p-5 rounded-b-2xl rounded-tr-2xl rounded-tl-lg max-w-[80%] relative">
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
-            tempore molestiae maiores cumque, veritatis ullam?
-          </p>
-          <div className="flex items-center absolute right-5 bottom-3 gap-1">
-            <div>
-              <p className="text-[12px]">16:28</p>
+          <div className="bg-[#f5f5f5] p-5 rounded-b-2xl rounded-tr-2xl rounded-tl-lg max-w-[80%] relative">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
+              tempore molestiae maiores cumque, veritatis ullam?
+            </p>
+            <div className="flex items-center absolute right-5 bottom-3 gap-1">
+              <div>
+                <p className="text-[12px]">16:28</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="bg-[#246bfd] text-white p-5 rounded-b-2xl rounded-tr-lg rounded-tl-2xl max-w-[80%] relative left-[20%]">
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
-            tempore molestiae maiores cumque, veritatis ullam?
-          </p>
-          <div className="flex items-center absolute right-5 bottom-3 gap-1">
-            <div>
-              <p className="text-[12px]">16:29</p>
-            </div>
-            <div>
-              <IoCheckmarkDoneOutline />
+          <div className="bg-[#246bfd] text-white p-5 rounded-b-2xl rounded-tr-lg rounded-tl-2xl max-w-[80%] relative left-[20%]">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
+              tempore molestiae maiores cumque, veritatis ullam?
+            </p>
+            <div className="flex items-center absolute right-5 bottom-3 gap-1">
+              <div>
+                <p className="text-[12px]">16:29</p>
+              </div>
+              <div>
+                <IoCheckmarkDoneOutline />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="bg-[#f5f5f5] p-5 rounded-b-2xl rounded-tr-2xl rounded-tl-lg max-w-[80%] relative">
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
-            tempore molestiae maiores cumque, veritatis ullam?
-          </p>
-          <div className="flex items-center absolute right-5 bottom-3 gap-1">
-            <div>
-              <p className="text-[12px]">16:28</p>
+          <div className="bg-[#f5f5f5] p-5 rounded-b-2xl rounded-tr-2xl rounded-tl-lg max-w-[80%] relative">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
+              tempore molestiae maiores cumque, veritatis ullam?
+            </p>
+            <div className="flex items-center absolute right-5 bottom-3 gap-1">
+              <div>
+                <p className="text-[12px]">16:28</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
       {/* message send box */}
-      <div className="relative w-full px-5 right-0 pt-5 min-h-[11vh]">
+      <div className="absolute w-full px-5 right-0 pt-2 pb-3 bottom-0 bg-white">
         <div>
           <form
           // onSubmit={handleSubmit(onSubmit)}
@@ -128,7 +129,7 @@ const ChatCompo = () => {
                   // {...register("Comment")}
                   onChange={handleChange}
                   ref={textAreaRef}
-                  rows={1}
+                  rows={-1}
                   value={value}
                   placeholder='Type something'
                   className='textareaScroll w-full outline-0 rounded-[10px] pl-[60px] py-3 max-h-[5lh]'
