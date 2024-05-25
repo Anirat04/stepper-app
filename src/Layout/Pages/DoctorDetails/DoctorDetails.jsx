@@ -46,6 +46,7 @@ const DoctorDetails = () => {
                     },
                     body: JSON.stringify({
                         "email": `${userEmail}`,
+                        // "doctorid": `${doctorId}`
                         "doctorid": `${doctorId}`
                     }),
                     redirect: "follow"
@@ -65,7 +66,7 @@ const DoctorDetails = () => {
         };
 
         fetchData();
-    }, [doctorId, sessionId, userEmail]);
+    }, [doctorId, sessionId, userEmail, paramsData]);
 
     const formData = {
         email: userEmail,

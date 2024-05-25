@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { CiLock } from "react-icons/ci";
 import { PiEyeLight } from 'react-icons/pi';
 import { PiEyeSlashThin } from "react-icons/pi";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../../../assets/images/weCare-logo.png'
 import GoogleLogo from '../../../../assets/images/Google-logo.png'
 import { IoLogoApple, IoMailOutline } from "react-icons/io5";
@@ -14,6 +14,13 @@ const Login = () => {
     const [hasTextEmail, setHasTextEmail] = useState(false);
     const [hasTextPass, setHasTextPass] = useState(false);
     const navigate = useNavigate()
+    const location = useLocation()
+    console.log(location);
+    useEffect(() => {
+        if (location.pathname === '/login') {
+            window.localStorage.clear()
+        }
+    }, [location.pathname])
 
     const handleEmailOnChange = (event) => {
         setHasTextEmail(event.target.value !== '');
