@@ -7,6 +7,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../../../assets/images/weCare-logo.png'
 import GoogleLogo from '../../../../assets/images/Google-logo.png'
 import { IoLogoApple, IoMailOutline } from "react-icons/io5";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
@@ -38,6 +40,22 @@ const Login = () => {
     } = useForm();
     const onSubmit = async (data) => {
         try {
+            // If the email or password is empty
+            if (data.email === '' || data.password === '') {
+                toast.error(`Please enter email and password`, {
+                    position: "top-center",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    // transition: Bounce,
+                });
+                return
+            }
+
             const response = await fetch('https://api-doctors24.duckdns.org/sign-in', {
                 method: 'POST',
                 headers: {
@@ -45,19 +63,15 @@ const Login = () => {
                 },
                 body: JSON.stringify(data),
             });
-            if (!response.status === 200) {
-                throw new Error('Failed to log in')
-            }
 
             const responseData = await response.json()
             console.log(responseData);
-
             const userData = {
                 email: data.email,
                 sessionid: responseData.sessionid,
             }
             // Save userData to local storage
-            if (response.status === 200) {
+            if (responseData.status === 200) {
                 console.log('userData saved to local storage');
                 localStorage.setItem('userData', JSON.stringify(userData));
                 // localStorage.setItem('userData', JSON.stringify(userData));
@@ -70,7 +84,22 @@ const Login = () => {
                     localStorage.setItem('sessionData', JSON.stringify(null));
                 }
             }
-            console.log(responseData);
+
+            // If email or password is wrong
+            if (responseData.status !== 200) {
+                toast.error(`${responseData.status_message}`, {
+                    position: "top-center",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+            }
+
+            // console.log(responseData);
             // Fetch session data
             const sessionResponse = await fetch("https://api-doctors24.duckdns.org/accounts/dashboard", {
                 method: "POST",
@@ -106,6 +135,22 @@ const Login = () => {
 
     return (
         <div className='bg-white h-full'>
+            <div className="absolute">
+                <ToastContainer
+                    position="top-right"
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="light"
+                // transition:Bounce
+                />
+                <ToastContainer />
+            </div>
             <div className='px-5 pt-[40px]'>
                 {/* Logo and header text */}
                 <div className='flex justify-center'>
