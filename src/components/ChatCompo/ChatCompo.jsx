@@ -20,8 +20,8 @@ const ChatCompo = () => {
   }, [value]);
 
   return (
-    <div className="max-h-svh pt-9 px-5 font-rubik relative">
-      <div className="flex items-center justify-between">
+    <div className="max-h-svh px-5 font-rubik relative overflow-auto">
+      <div className="flex items-center justify-between h-[8svh] pt-5">
         <div className="flex items-center gap-4">
           <div>
             <IoMdArrowBack className="text-[22px]" />
@@ -37,7 +37,7 @@ const ChatCompo = () => {
       </div>
 
       {/* Chat divs */}
-      <div className="flex flex-col gap-4 pt-5 max-h-[76vh] overflow-y-auto">
+      <div className="flex flex-col gap-4 pt-5 overflow-y-auto max-h-[81svh]">
         <div className="bg-[#f5f5f5] p-5 rounded-b-2xl rounded-tr-2xl rounded-tl-lg max-w-[80%] relative">
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
@@ -117,7 +117,7 @@ const ChatCompo = () => {
       </div>
 
       {/* message send box */}
-      <div className="relative w-full px-5 right-0 pt-5 pb-3">
+      <div className="relative w-full px-5 right-0 pt-5 min-h-[11vh]">
         <div>
           <form
           // onSubmit={handleSubmit(onSubmit)}
