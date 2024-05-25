@@ -6,7 +6,7 @@ import "./style.css";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import { useContext } from "react";
-import { AuthContext } from "../../Providers/AuthProvider";
+import { AuthContext } from "../../../../Providers/AuthProvider";
 
 const SelectPackage = () => {
   const params_bookingID = useParams().booking_id

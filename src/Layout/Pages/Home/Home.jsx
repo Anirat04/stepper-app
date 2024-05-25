@@ -39,7 +39,7 @@ const Home = () => {
         const getSessionId = user?.sessionid
         try {
             const sessionDataFromStorage = JSON.parse(localStorage.getItem('sessionData'));
-            if (sessionDataFromStorage) {
+            if (loading === true) {
                 setSessionData(sessionDataFromStorage);
                 setLoading(false);
                 return;
@@ -58,33 +58,29 @@ const Home = () => {
                 }
             );
             const sessionResponseData = await sessionResponse.json();
-
-
             if (sessionResponseData.status === 200) {
                 setSessionData(sessionResponseData.data);
                 localStorage.setItem('sessionData', JSON.stringify(sessionResponseData.data));
-                console.log(sessionResponseData);
+                console.log('API called', sessionResponseData);
                 setLoading(false)
-            } else {
+            }
+            else {
                 setLoading(true)
             }
 
             if (sessionResponseData.status !== 200) {
                 setLoading(true)
             }
-            // else {
-            //     navigate('/')
-            // }
         } catch (error) {
             navigate('/login')
             console.error("Error fetching session data:", error);
         }
-    }, [user?.sessionid, user?.email, navigate]);
+    }, [user?.sessionid, user?.email, loading, navigate]);
 
     useEffect(() => {
         getSessionData();
     }, [getSessionData]);
-    console.log(sessionData);
+    // console.log(sessionData);
     // Code for getting session data ends here
 
     if (loading === true && sessionData === null) {

@@ -20,7 +20,7 @@ import LiveViewer from "./Layout/Pages/LiveViewer/LiveViewer.jsx";
 import AuthProvider from "./Providers/AuthProvider.jsx";
 import DoctorDetails from "./Layout/Pages/DoctorDetails/DoctorDetails.jsx";
 import Bookings from "./Layout/Pages/Bookings/Bookings.jsx";
-import SelectPackage from "./components/SelectPackage/SelectPackage.jsx";
+import SelectPackage from "./Layout/Pages/DoctorDetails/SelectPackage/SelectPackage.jsx";
 import ReAppointment from "./components/ReAppointment/ReAppointment.jsx";
 import CancAppointment from "./Layout/Pages/Bookings/CancAppointment/CancAppointment.jsx";
 import ChatCompo from "./components/ChatCompo/ChatCompo.jsx";
