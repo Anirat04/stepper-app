@@ -4,12 +4,13 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../../../Providers/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 const CancAppointment = () => {
   const [showOtherReasonTextarea, setShowOtherReasonTextarea] = useState(false);
   const [selectedReason, setSelectedReason] = useState('')
   const { user } = useContext(AuthContext)
+  const navigate = useNavigate()
   const params = useParams()
 
   const handleRadioChange = (e) => {
@@ -40,7 +41,8 @@ const CancAppointment = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${user?.sessionid}`
+          // Authorization: `Bearer ${user?.sessionid}`
+          Authorization: `Bearer fc845c7737bde4bf96232f453a712233`
         },
         body: JSON.stringify(cancelData)
       })
@@ -58,8 +60,10 @@ const CancAppointment = () => {
           theme: "light",
           // transition: Bounce,
         });
+      } else if (response.status === "401") {
+        navigate('/login')
       }
-      console.log(response);
+      console.log(response.status);
     } catch (error) {
       console.log(error);
     }
