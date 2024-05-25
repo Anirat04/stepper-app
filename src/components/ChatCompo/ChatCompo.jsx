@@ -1,12 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { IoMdArrowBack } from "react-icons/io";
 import { CiSearch } from "react-icons/ci";
 import { PiDotsThreeCircleLight } from "react-icons/pi";
 import { IoCheckmarkDoneOutline } from "react-icons/io5";
 
 const ChatCompo = () => {
+  const textAreaRef = useRef(null);
+  const [value, setValue] = useState("");
+  const handleChange = (e) => {
+    const val = e.target?.value;
+    setValue(val);
+  };
+
+  useEffect(() => {
+    if (textAreaRef) {
+      textAreaRef.current.style.height = "auto"
+      textAreaRef.current.style.height = textAreaRef.current.scrollHeight + "px"
+    }
+  }, [value]);
+
   return (
-    <div className="h-svh pt-9 px-5 font-rubik relative">
+    <div className="min-h-svh pt-9 px-5 font-rubik relative">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
           <div>
@@ -74,8 +88,12 @@ const ChatCompo = () => {
               <div className='w-full relative'>
                 <textarea
                   // {...register("Comment")}
+                  onChange={handleChange}
+                  ref={textAreaRef}
+                  rows={1}
+                  value={value}
                   placeholder='Type something'
-                  className='textareaScroll w-full max-h-[50px] outline-0 rounded-[10px] pl-[60px] py-3'
+                  className='textareaScroll w-full outline-0 rounded-[10px] pl-[60px] py-3'
                   style={{
                     "boxShadow": "0px 4px 10px -2px rgba(0,0,0,0.1)"
                   }}
