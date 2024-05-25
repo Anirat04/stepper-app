@@ -106,7 +106,7 @@ const router = createBrowserRouter([
     element: <DoctorDetails></DoctorDetails>,
   },
   {
-    path: "doctor-details/:id/select-package",
+    path: "doctor-details/:id/select-package/:booking_id",
     element: <SelectPackage></SelectPackage>,
   },
   {

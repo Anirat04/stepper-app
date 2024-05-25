@@ -41,8 +41,8 @@ const CancAppointment = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          // Authorization: `Bearer ${user?.sessionid}`
-          Authorization: `Bearer fc845c7737bde4bf96232f453a712233`
+          Authorization: `Bearer ${user?.sessionid}`
+          // Authorization: `Bearer fc845c7737bde4bf96232f453a712233`
         },
         body: JSON.stringify(cancelData)
       })

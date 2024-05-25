@@ -4,14 +4,42 @@ import { HiClock } from "react-icons/hi2";
 import { IoMdArrowDropdown } from "react-icons/io";
 import "./style.css";
 import { useForm } from "react-hook-form";
+import { useParams } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const SelectPackage = () => {
+  const params_bookingID = useParams().booking_id
+  const { user } = useContext(AuthContext)
+
   const {
     register,
     handleSubmit,
     // formState: { errors }
   } = useForm();
-  const onSubmit = data => console.log(data);
+  const onSubmit = async (data) => {
+    const packageData = {
+      email: user?.email,
+      bookingID: params_bookingID,
+      durationID: data?.durationID,
+      packageID: 1,
+    }
+    console.log(packageData);
+    try {
+      const postPackageData = await fetch('https://api-doctors24.duckdns.org/accounts/select-package', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${user?.sessionid}`
+        },
+        body: JSON.stringify(packageData)
+      })
+      const response = await postPackageData.json()
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   // console.log(errors);
 
   return (
@@ -82,7 +110,7 @@ const SelectPackage = () => {
                         <p className="text-[12px] text-[#677294]">/30 mins</p>
                       </div>
                       <div>
-                        <input {...register("packageID")} value={20} type="radio" />
+                        <input {...register("packageID")} value={1} type="radio" />
                       </div>
                     </div>
                   </label>
@@ -107,7 +135,7 @@ const SelectPackage = () => {
                         <p className="text-[12px] text-[#677294]">/30 mins</p>
                       </div>
                       <div>
-                        <input {...register("packageID")} value={40} type="radio" />
+                        <input {...register("packageID")} value={1} type="radio" />
                       </div>
                     </div>
                   </label>
@@ -132,7 +160,7 @@ const SelectPackage = () => {
                         <p className="text-[12px] text-[#677294]">/30 mins</p>
                       </div>
                       <div>
-                        <input {...register("packageID")} value={60} type="radio" />
+                        <input {...register("packageID")} value={1} type="radio" />
                       </div>
                     </div>
                   </label>

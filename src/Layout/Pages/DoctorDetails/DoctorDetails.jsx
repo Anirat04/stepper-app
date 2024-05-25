@@ -91,7 +91,7 @@ const DoctorDetails = () => {
             const result = await response.json()
             if (result.booking_status === 1) {
                 console.log(result.booking_status);
-                navigate(`/doctor-details/${doctorId}/select-package`)
+                navigate(`/doctor-details/${doctorId}/select-package/${result.booking_id}`)
             }
             else {
                 console.log(result.status_message);
