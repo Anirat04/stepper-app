@@ -3,15 +3,27 @@ import { Link } from 'react-router-dom';
 import avatar from '../../../assets/images/live-avatar.png'
 import { useForm } from 'react-hook-form';
 import EmojiPicker from 'emoji-picker-react';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import commentAvatar1 from '../../../assets/images/LiveViewer/CommentAvatar1.png'
 import commentAvatar2 from '../../../assets/images/LiveViewer/CommentAvatar2.png'
 import commentAvatar3 from '../../../assets/images/LiveViewer/CommentAvatar3.png'
 import liveDoctorImage from '../../../assets/images/LiveViewer/DoctorInlive1.png'
 
 const LiveViewer = () => {
-
     const [openEmoji, setOpenEmoji] = useState(false)
+    const textAreaRef = useRef(null);
+    const [value, setValue] = useState("");
+    const handleChange = (e) => {
+        const val = e.target?.value;
+        setValue(val);
+    };
+
+    useEffect(() => {
+        if (textAreaRef) {
+            textAreaRef.current.style.height = "50px"
+            textAreaRef.current.style.height = textAreaRef.current.scrollHeight + "px"
+        }
+    }, [value]);
 
     const handleEmojiPickerOpen = () => {
         setOpenEmoji(!openEmoji)
@@ -139,19 +151,23 @@ const LiveViewer = () => {
                         </div>
                         <div>
                             <form onSubmit={handleSubmit(onSubmit)}>
-                                <div className='relative'>
+                                <div className='relative rounded-full'>
                                     <textarea
                                         {...register("Comment")}
+                                        onChange={handleChange}
+                                        ref={textAreaRef}
+                                        rows={1}
+                                        value={value}
                                         placeholder='Add a Comment......'
-                                        className='textareaScroll w-full max-h-[54px] outline-0 rounded-full pl-[60px] pr-12 py-[17px]'
+                                        className=' w-full max-h-[5lh] outline-0 rounded-[27px] pl-[60px] py-[17px] pr-12'
                                     />
-                                    <div className='bg-[#0EBE7E] w-11 h-11 rounded-full flex justify-center items-center absolute bottom-[12px] left-[5px]'>
+                                    <div className='bg-[#0EBE7E] w-11 h-11 rounded-full flex justify-center items-center absolute left-[5px] bottom-[14px]'>
                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M8 0C3.57861 0 0 3.578 0 8C0 9.4032 0.365967 10.7737 1.06091 11.9824L0.0301514 15.1833C-0.0417481 15.4065 0.017334 15.6511 0.183105 15.8169C0.34729 15.9811 0.591309 16.0424 0.81665 15.9698L4.01758 14.9391C5.22632 15.634 6.5968 16 8 16C12.4214 16 16 12.422 16 8C16 3.57861 12.422 0 8 0ZM8 14.75C6.73254 14.75 5.49707 14.3964 4.42712 13.7273C4.27319 13.6311 4.08203 13.6051 3.90417 13.6624L1.59351 14.4065L2.33765 12.0958C2.39404 11.9205 2.37024 11.7291 2.27258 11.5729C1.60364 10.5029 1.25 9.26746 1.25 8C1.25 4.27808 4.27808 1.25 8 1.25C11.7219 1.25 14.75 4.27808 14.75 8C14.75 11.7219 11.7219 14.75 8 14.75ZM8.78125 8C8.78125 8.4314 8.43152 8.78125 8 8.78125C7.56848 8.78125 7.21875 8.4314 7.21875 8C7.21875 7.56848 7.56848 7.21875 8 7.21875C8.43152 7.21875 8.78125 7.56848 8.78125 8ZM11.9062 8C11.9062 8.4314 11.5565 8.78125 11.125 8.78125C10.6935 8.78125 10.3438 8.4314 10.3438 8C10.3438 7.56848 10.6935 7.21875 11.125 7.21875C11.5565 7.21875 11.9062 7.56848 11.9062 8ZM5.65625 8C5.65625 8.4314 5.30652 8.78125 4.875 8.78125C4.4436 8.78125 4.09375 8.4314 4.09375 8C4.09375 7.56848 4.4436 7.21875 4.875 7.21875C5.30652 7.21875 5.65625 7.56848 5.65625 8Z" fill="white" />
                                         </svg>
                                     </div>
                                     <div
-                                        className='absolute right-5 bottom-6'
+                                        className='absolute right-5  bottom-7'
                                         onClick={handleEmojiPickerOpen}
                                     >
                                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">

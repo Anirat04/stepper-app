@@ -129,7 +129,7 @@ const ChatCompo = () => {
                   // {...register("Comment")}
                   onChange={handleChange}
                   ref={textAreaRef}
-                  rows={-1}
+                  rows={1}
                   value={value}
                   placeholder='Type something'
                   className='textareaScroll w-full outline-0 rounded-[10px] pl-[60px] py-3 max-h-[5lh]'
