@@ -37,7 +37,7 @@ const ChatCompo = () => {
       </div>
 
       {/* Chat divs */}
-      <div className="relative overflow-y-auto h-svh pb-20 pt-16">
+      <div className="relative overflow-y-auto h-svh pb-20 pt-12">
         <div className="flex flex-col gap-4 pt-5 px-5">
           <div className="bg-[#f5f5f5] p-5 rounded-b-2xl rounded-tr-2xl rounded-tl-lg max-w-[80%] relative">
             <p>
