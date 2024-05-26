@@ -15,9 +15,11 @@ const Login = () => {
     const [openEye, setOpenEye] = useState(false)
     const [hasTextEmail, setHasTextEmail] = useState(false);
     const [hasTextPass, setHasTextPass] = useState(false);
+    const [loading, setLoading] = useState(false);
+    console.log(loading);
     const navigate = useNavigate()
     const location = useLocation()
-    console.log(location);
+
     useEffect(() => {
         if (location.pathname === '/login') {
             window.localStorage.clear()
@@ -53,6 +55,7 @@ const Login = () => {
                     theme: "light",
                     // transition: Bounce,
                 });
+                setLoading(false)
                 return
             }
 
@@ -83,6 +86,8 @@ const Login = () => {
                     }));
                     localStorage.setItem('sessionData', JSON.stringify(null));
                 }
+                setLoading(false)
+                // navigate('/')
             }
 
             // If email or password is wrong
@@ -97,6 +102,7 @@ const Login = () => {
                     progress: undefined,
                     theme: "light",
                 });
+                setLoading(false)
             }
 
             // console.log(responseData);
@@ -133,6 +139,8 @@ const Login = () => {
         setOpenEye(!openEye)
     }
 
+
+
     return (
         <div className='bg-white h-full'>
             <div className="absolute">
@@ -147,6 +155,7 @@ const Login = () => {
                     draggable
                     pauseOnHover
                     theme="light"
+                    containerId="containerA"
                 // transition:Bounce
                 />
                 <ToastContainer />
@@ -208,7 +217,13 @@ const Login = () => {
                             </div>
                         </div>
                         <button className="btn btn-primary bg-[#7563f7] border-none w-full text-white font-normal">
-                            <input className='w-full h-full' type="submit" value={'Log In'} />
+                            {
+                                loading === true
+                                    ?
+                                    <span className="loading loading-infinity loading-lg"></span>
+                                    :
+                                    <input className='w-full h-full' onClick={() => setLoading(true)} type="submit" value={`Log In`} />
+                            }
                         </button>
                     </form>
                 </div>

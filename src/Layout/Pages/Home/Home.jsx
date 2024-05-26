@@ -16,6 +16,7 @@ import Loader from "../../../components/Shared/Loader/Loader";
 // TODO: Header section have to  move to separate component
 const Home = () => {
     const { user } = useContext(AuthContext)
+    // console.log("user", user);
     const [sessionData, setSessionData] = useState(null);
     const PopularDoctorsData = sessionData?.PopularDoctors
     const FeatureDoctorsData = sessionData?.FeatureDoctors
@@ -39,52 +40,56 @@ const Home = () => {
         const getSessionId = user?.sessionid
         try {
             const sessionDataFromStorage = JSON.parse(localStorage.getItem('sessionData'));
-            if (loading === true && sessionDataFromStorage) {
+            // console.log('SessionStorage data =', sessionDataFromStorage);
+            if (loading === true && sessionDataFromStorage !== null) {
                 setSessionData(sessionDataFromStorage);
                 setLoading(false);
+                // console.log('Checking');
                 return;
             }
 
+            if (user !== null) {
+                // console.log('going next line');
+                const sessionResponse = await fetch(
+                    "https://api-doctors24.duckdns.org/accounts/dashboard",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            Authorization: `Bearer ${getSessionId}`,
+                        },
+                        body: JSON.stringify({ email: user?.email }),
+                    }
+                );
+                const sessionResponseData = await sessionResponse.json();
 
-            const sessionResponse = await fetch(
-                "https://api-doctors24.duckdns.org/accounts/dashboard",
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        Authorization: `Bearer ${getSessionId}`,
-                    },
-                    body: JSON.stringify({ email: user?.email }),
+                if (sessionResponseData.status === 200) {
+                    setSessionData(sessionResponseData.data);
+                    localStorage.setItem('sessionData', JSON.stringify(sessionResponseData.data));
+                    console.log('API called', sessionResponseData);
+                    setLoading(false)
                 }
-            );
-            const sessionResponseData = await sessionResponse.json();
-            if (sessionResponseData.status === 200) {
-                setSessionData(sessionResponseData.data);
-                localStorage.setItem('sessionData', JSON.stringify(sessionResponseData.data));
-                console.log('API called', sessionResponseData);
-                setLoading(false)
-            }
-            else {
-                setLoading(true)
-            }
+                else {
+                    setLoading(true)
+                }
 
-            if (sessionResponseData.status === "401") {
-                navigate('/login')
+                if (sessionResponseData.status === "401") {
+                    navigate('/login')
+                }
+                if (sessionResponseData.status === "406" && sessionDataFromStorage === null) {
+                    navigate('/login')
+                    console.log(sessionDataFromStorage);
+                }
+                console.log(sessionResponseData);
+                if (sessionResponseData.status !== 200) {
+                    setLoading(true)
+                }
             }
-            if (sessionResponseData.status === "406" && sessionDataFromStorage === null) {
-                navigate('/login')
-                console.log(sessionDataFromStorage);
-            }
-
-            // if (sessionResponseData.status !== 200) {
-            //     setLoading(true)
-            // }
-            console.log(sessionResponseData);
         } catch (error) {
             navigate('/login')
             console.error("Error fetching session data:", error);
         }
-    }, [user?.sessionid, user?.email, loading, navigate]);
+    }, [user, loading, navigate]);
 
     useEffect(() => {
         getSessionData();

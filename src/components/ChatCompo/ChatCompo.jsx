@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { IoMdArrowBack } from "react-icons/io";
 import { CiSearch } from "react-icons/ci";
 import { PiDotsThreeCircleLight } from "react-icons/pi";
