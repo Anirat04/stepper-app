@@ -2,6 +2,10 @@ import { Link } from "react-router-dom";
 
 
 const StepThree = () => {
+    const handleWelcomePage = () => {
+        localStorage.setItem('Welcome page', false)
+    }
+
     return (
         <div className="bg-[#f8f7ff] h-full">
             <div className="">
@@ -23,7 +27,12 @@ const StepThree = () => {
                 </div>
                 <div className="">
                     <Link to='/login'>
-                        <button className="btn btn-primary bg-[#7563f7] border-none w-full text-white">Get Started</button>
+                        <button
+                            className="btn btn-primary bg-[#7563f7] border-none w-full text-white"
+                            onClick={handleWelcomePage}
+                        >
+                            Get Started
+                        </button>
                     </Link>
                 </div>
             </div>

@@ -22,7 +22,9 @@ const Login = () => {
 
     useEffect(() => {
         if (location.pathname === '/login') {
-            window.localStorage.clear()
+            // window.localStorage.clear()
+            localStorage.removeItem('userData');
+            localStorage.removeItem('sessionData');
         }
     }, [location.pathname])
 
