@@ -9,6 +9,7 @@ import GoogleLogo from '../../../../assets/images/Google-logo.png'
 import { IoLogoApple, IoMailOutline } from "react-icons/io5";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { ErrorMessage } from "@hookform/error-message"
 
 
 const Login = () => {
@@ -22,7 +23,7 @@ const Login = () => {
 
     useEffect(() => {
         if (location.pathname === '/login') {
-            // window.localStorage.clear()
+            // window.localStorage.clear()z
             localStorage.removeItem('userData');
             localStorage.removeItem('sessionData');
         }
@@ -43,6 +44,8 @@ const Login = () => {
         // formState: { errors }
     } = useForm();
     const onSubmit = async (data) => {
+        console.log("data", data);
+        setLoading(true)
         try {
             // If the email or password is empty
             if (data.email === '' || data.password === '') {
@@ -131,6 +134,7 @@ const Login = () => {
                 navigate('/')
             }
 
+            console.log(responseData);
         } catch (error) {
             console.log('Error:', error);
         }
@@ -181,7 +185,7 @@ const Login = () => {
                                 <input
                                     type="email"
                                     placeholder="Enter your email"
-                                    {...register("email")}
+                                    {...register('email')}
                                     onChange={handleEmailOnChange}
                                     className={`bg-white border w-full py-3 rounded-lg pl-12 outline-0 focus:border-[#7563f7] ${hasTextEmail ? 'border-[#7563f7]' : ''} text-black`}
                                 />
@@ -224,7 +228,8 @@ const Login = () => {
                                     ?
                                     <span className="loading loading-infinity loading-lg"></span>
                                     :
-                                    <input className='w-full h-full' onClick={() => setLoading(true)} type="submit" value={`Log In`} />
+                                    <input className='w-full h-full' type="submit" value={`Log In`} />
+                                // <input className='w-full h-full' onClick={() => setLoading(true)} type="submit" value={`Log In`} />
                             }
                         </button>
                     </form>
